@@ -1,0 +1,34 @@
+/* Favicon Styles for SecuFleet Logo */
+.favicon {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border: 2px solid #06A3DA;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.favicon-large {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border: 3px solid #06A3DA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.favicon-small {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  border: 1px solid #06A3DA;
+}
+
+/* For favicon.ico replacement */
+.favicon-icon {
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 

@@ -1,6 +1,54 @@
+/* Import Bootstrap from assets to match version */
+@import '../assets/css/bootstrap.min.css';
+
+/* Import Font Awesome from npm package */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Import only completely non-conflicting custom styles */
+@import '../assets/css/animation.css';
+
+/* Favicon Styles for SecuFleet Logo */
+.favicon {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border: 2px solid #06A3DA;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.favicon-large {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border: 3px solid #06A3DA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.favicon-small {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  border: 1px solid #06A3DA;
+}
+
+.favicon-icon {
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Global CSS variables and base styles */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #06A3DA;
+  --secondary: #34AD54;
+  --light: #EEF9FF;
+  --dark: #091E3E;
 }
 
 @media (prefers-color-scheme: dark) {

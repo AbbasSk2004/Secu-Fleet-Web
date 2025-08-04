@@ -1,0 +1,303 @@
+body{
+
+    align-items: center;
+    
+}
+.serviceCard{
+
+    width: 80px;
+    object-fit: contain;
+}
+
+.question-container, .service-container{
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+   
+}
+.quoteIcon{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+ }
+
+ /* #fleet-question-container, #webdev-question-container, #consulting-question-container{
+    background-color: #091e3e29;
+} */
+ .service-container,.fleet-questions,.webDev-questions,.consulting-questions{
+    /* background: url("/images/consulting/stratetgy/Sustainability.png"); */
+    background: url("/images/gclass.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    animation: bounce-in-right  0.8s ease-in-out both;
+    padding-top: 10%;
+ }
+
+ @media (max-width:768px) {
+    .service-container{
+        height: fit-content !important;
+    }
+ }
+.question {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.question-card .cam i{
+    font-size: 20px !important; 
+}
+.question-card,  .service {
+
+    display: inline-block;
+    border: 2px solid rgb(6, 163, 218);
+    padding: 20px;
+    color:white ;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px 10px rgba(9, 30, 62, 0.678); 
+    width: 150px;
+    height: 150px;
+    background-color: #091e3ec9;
+}
+.hidden {
+    display: none;
+}
+
+.question h2{
+    color: white;
+    margin-bottom: 5%;
+}
+.question-card p {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+
+.question-card.selected, .service.selected {
+    border-color:rgb(6, 163, 218);
+    background-color: #f0f8ff;
+    box-shadow: 0px 0px 10px rgba(9, 30, 62, 0.732);
+    color: black;
+}
+.heading-background{
+    background-color: #091e3eaf;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-bottom: 10% !important;
+}
+.title{
+    text-align: center;
+    width: 100%;
+   padding: 30px;
+   color: white;
+}
+.confirmationSection {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out forwards;
+    margin-top: 50px;
+}
+
+
+.progress-container {
+ 
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+.progress-container span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 2rem;
+    background-color: #081f3ea3;
+    border-radius: 50px;
+    padding: 10px;
+}
+.submit-btn {
+    display: block;
+    margin: 20px auto;
+    width:100px;
+    margin-left: 45%;
+    color: white;
+}
+/* Add this CSS */
+.enabled {
+background-color: #081E3E; /* Change the color to your desired color */
+color: white; /* Change the text color if needed */
+}
+.enabled:hover{
+background-color: red;
+}
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 10px;
+  
+    border-radius: 5px;
+
+}
+
+input[type="email"], input[type="tel"], input[type="text"] {
+    
+    width: 33%; /* Full width */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 3px solid rgb(6, 163, 218) ; 
+    border-radius: 8px; 
+    color: rgb(6, 163, 218); 
+    font-size: 1rem;
+    outline: none; 
+    transition: all 0.3s ease;
+}
+
+/* Focus effect */
+input[type="email"]:focus, input[type="tel"]:focus, input[type="text"]:focus {
+    border-color: #081E3E ; /* Change border color on focus */
+    box-shadow: 0px 0px 10px #081E3E /* Add glow effect */
+}
+
+/* Placeholder text */
+input::placeholder {
+    color: black; /* Faded white for placeholder */
+    font-style: italic;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+.emailLabel, .phoneLabel, .companyLabel {
+    color: rgb(6, 163, 218); /* Light blue for labels */
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 10px; /* Spacing between label and input */
+    min-width: 120px; /* Consistent label width for alignment */
+    text-align: right; /* Align text to the right for clean look */
+}
+.btn-secondary{
+    background-color: #081E3E !important;
+    border: 1px solid #081E3E !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+}
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: grey solid 1px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radio-group label:hover {
+    background-color: rgb(6, 163, 218);
+    border-color: #aaa;
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.bounce-top {
+	-webkit-animation: bounce-top 0.9s both;
+	        animation: bounce-top 0.9s both;
+}
+
+  @keyframes bounce-top {
+    0% {
+      -webkit-transform: translateY(-45px);
+              transform: translateY(-45px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateY(-24px);
+              transform: translateY(-24px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateY(-12px);
+              transform: translateY(-12px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    82% {
+      -webkit-transform: translateY(-6px);
+              transform: translateY(-6px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    93% {
+      -webkit-transform: translateY(-4px);
+              transform: translateY(-4px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  

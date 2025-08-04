@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecuFleet Favicon Demo</title>
+    <link rel="stylesheet" href="favicon-styles.css">
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon.ico">
+</head>
+<body>
+    <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h1>SecuFleet Favicon Demo</h1>
+        <p>This page demonstrates the circular SecuFleet favicon with 50% border radius.</p>
+        
+        <h2>Favicon Sizes:</h2>
+        <div style="display: flex; gap: 20px; align-items: center; margin: 20px 0;">
+            <div>
+                <img src="favicon.ico" alt="Small Favicon" class="favicon-small">
+                <p>16x16px</p>
+            </div>
+            <div>
+                <img src="favicon.ico" alt="Medium Favicon" class="favicon">
+                <p>32x32px</p>
+            </div>
+            <div>
+                <img src="favicon.ico" alt="Large Favicon" class="favicon-large">
+                <p>64x64px</p>
+            </div>
+        </div>
+        
+        <h2>Usage in Next.js:</h2>
+        <p>To use this favicon in your Next.js app, add these lines to your <code>src/app/layout.js</code>:</p>
+        <pre style="background: #f5f5f5; padding: 15px; border-radius: 5px;">
+&lt;link rel="icon" type="image/x-icon" href="/favicon/favicon.ico"&gt;
+&lt;link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon.ico"&gt;
+&lt;link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon/favicon.ico"&gt;
+        </pre>
+        
+        <h2>CSS Classes Available:</h2>
+        <ul>
+            <li><code>.favicon</code> - 32x32px circular favicon</li>
+            <li><code>.favicon-large</code> - 64x64px circular favicon</li>
+            <li><code>.favicon-small</code> - 16x16px circular favicon</li>
+            <li><code>.favicon-icon</code> - For icon usage with white background</li>
+        </ul>
+    </div>
+</body>
+</html> 
