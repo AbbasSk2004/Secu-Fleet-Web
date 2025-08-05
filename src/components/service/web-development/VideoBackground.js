@@ -4,7 +4,7 @@ const VideoBackground = () => {
   return (
     <section className="discover wow bounceInRight">
       <div className="video-background">
-        <video autoPlay loop muted playsInline>
+        <video autoPlay loop muted playsInline suppressHydrationWarning>
           <source src="/assets/videos/webAnimation.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

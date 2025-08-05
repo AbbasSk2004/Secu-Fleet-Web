@@ -10,6 +10,7 @@ const AdasHero = () => {
         muted 
         autoPlay 
         loop
+        suppressHydrationWarning
         style={{
           objectFit: 'cover',
           backgroundPosition: 'center',

@@ -9,6 +9,7 @@ const WorktimeHero = () => {
       autoPlay 
       loop 
       muted
+      suppressHydrationWarning
       style={{
         objectFit: 'cover',
         backgroundPosition: 'center',

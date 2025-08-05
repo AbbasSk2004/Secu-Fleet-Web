@@ -10,6 +10,7 @@ const VehicleInspectionHero = () => {
         muted 
         autoPlay 
         loop
+        suppressHydrationWarning
         style={{
           objectFit: 'cover',
           backgroundPosition: 'center',

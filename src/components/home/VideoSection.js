@@ -15,6 +15,7 @@ const VideoSection = () => {
         playsInline
         preload="auto"
         poster="/assets/videos/poster.jpg"
+        suppressHydrationWarning
         style={{
           position: 'absolute',
           top: 0,

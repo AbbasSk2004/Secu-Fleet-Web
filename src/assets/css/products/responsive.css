@@ -377,9 +377,6 @@ Version:	1.1
 }
 /* Mobile Screen */
 @media only screen and (max-width: 767px) {
-.header.sticky{
-	
-}
 .header.sticky .header-bottom{
 	position:absolute;
 	z-index:999;
@@ -433,9 +430,6 @@ Version:	1.1
 	margin: 0;
 	font-size: .875em;
 	background: transparent;
-}
-.slicknav_nav li{
-	
 }
 .slicknav_nav li a {
 	color: #2C2D3F;
@@ -775,11 +769,9 @@ Version:	1.1
 	font-weight: 500;
 }
 .news-single .meta-right {
-	float: none;
-	display: inline-block;
+	float: left;
 	margin-top: -6px;
 	margin-left: 56px;
-	float: left;
 }
 .news-single .image-gallery .single-image {
 	margin: 10px 0;
@@ -789,7 +781,6 @@ Version:	1.1
 }
 .news-single .social-share li {
 	float: left;
-	display: inline-block;
 	margin: 5px;
 }
 .news-single .prev-next {

@@ -1,7 +1,15 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect, useRef } from 'react';
 import '../../assets/css/aboutSlider.css';
 
 const AboutSlider = () => {
+  const [currentSection, setCurrentSection] = useState('workflow');
+  const [isClient, setIsClient] = useState(false);
+  const progressBarRef = useRef(null);
+  const intervalRef = useRef(null);
+  const isManualClickRef = useRef(false);
+
   const contentData = {
     security: {
       image: 'https://i.ibb.co/Zh4ncPd/distracted.jpg',
@@ -45,6 +53,85 @@ const AboutSlider = () => {
     }
   };
 
+  const sections = ['security', 'ecosystem', 'workflow', 'visibility'];
+
+  // Set client flag after hydration
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Update progress bar
+  const updateProgressBar = (section) => {
+    if (!isClient || !progressBarRef.current) return;
+
+    const activeLink = document.getElementById(`${section}-link`);
+    const container = document.querySelector('.navbarabout');
+    
+    if (!activeLink || !container) return;
+
+    const rect = activeLink.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    const width = rect.width;
+    const left = rect.left - containerRect.left;
+
+    const progressBar = progressBarRef.current;
+    progressBar.style.transition = 'none';
+    progressBar.style.width = '0';
+    progressBar.style.left = left + 'px';
+    
+    setTimeout(() => {
+      progressBar.style.transition = 'width 5s linear';
+      progressBar.style.width = width + 'px';
+    }, 50);
+  };
+
+  // Auto change content
+  const autoChangeContent = () => {
+    if (isManualClickRef.current) return;
+    
+    const currentIndex = sections.indexOf(currentSection);
+    const nextIndex = (currentIndex + 1) % sections.length;
+    setCurrentSection(sections[nextIndex]);
+  };
+
+  // Handle manual section change
+  const handleSectionChange = (section) => {
+    isManualClickRef.current = true;
+    setCurrentSection(section);
+    
+    // Reset manual click flag after a short delay
+    setTimeout(() => {
+      isManualClickRef.current = false;
+    }, 100);
+  };
+
+  // Set up auto-change interval
+  useEffect(() => {
+    if (!isClient) return;
+
+    // Clear existing interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    // Start new interval
+    intervalRef.current = setInterval(autoChangeContent, 5000);
+
+    // Cleanup on unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [currentSection, isClient]);
+
+  // Update progress bar when section changes
+  useEffect(() => {
+    if (isClient) {
+      updateProgressBar(currentSection);
+    }
+  }, [currentSection, isClient]);
+
   return (
     <>
       {/* Video Background */}
@@ -54,6 +141,7 @@ const AboutSlider = () => {
         loop 
         muted 
         preload="none"
+        suppressHydrationWarning
         style={{
           position: 'absolute',
           top: 0,
@@ -73,47 +161,68 @@ const AboutSlider = () => {
         <div className="aboutSlider" id="aboutSlider">
           <h1 className="aboutSliderh1" style={{ color: 'white' }}>Transformation through intelligent operations</h1>
           
-          {/* Static Navigation */}
+          {/* Navigation */}
           <nav className="navbarabout">
-            <a id="security-link" style={{ cursor: 'pointer' }}>
+            <a 
+              id="security-link" 
+              style={{ cursor: 'pointer' }}
+              className={currentSection === 'security' ? 'active1' : ''}
+              onClick={() => handleSectionChange('security')}
+            >
               <i className="bi bi-shield-lock"></i> AI-enabled Scenarios
             </a>
-            <a id="ecosystem-link" style={{ cursor: 'pointer' }}>
+            <a 
+              id="ecosystem-link" 
+              style={{ cursor: 'pointer' }}
+              className={currentSection === 'ecosystem' ? 'active1' : ''}
+              onClick={() => handleSectionChange('ecosystem')}
+            >
               <i className="bi bi-globe"></i> Digital Ecosystem
             </a>
-            <a id="workflow-link" className="active1" style={{ cursor: 'pointer' }}>
+            <a 
+              id="workflow-link" 
+              style={{ cursor: 'pointer' }}
+              className={currentSection === 'workflow' ? 'active1' : ''}
+              onClick={() => handleSectionChange('workflow')}
+            >
               <i className="bi bi-diagram-3"></i> Productivity and Efficiency
             </a>
-            <a id="visibility-link" style={{ cursor: 'pointer' }}>
+            <a 
+              id="visibility-link" 
+              style={{ cursor: 'pointer' }}
+              className={currentSection === 'visibility' ? 'active1' : ''}
+              onClick={() => handleSectionChange('visibility')}
+            >
               <i className="bi bi-eye"></i> Real-time Visibility
             </a>
           </nav>
           
-          {/* Static Progress Bar */}
+          {/* Progress Bar */}
           <div className="progress-aboutSlider">
             <div 
+              ref={progressBarRef}
               className="progress-bar" 
               id="progress-bar"
               style={{
-                width: '0px',
-                left: '0px',
-                transition: 'none'
+                width: isClient ? '0px' : '0px',
+                left: isClient ? '0px' : '0px',
+                transition: isClient ? 'none' : 'none'
               }}
             ></div>
           </div>
           
-          {/* Static Content - Shows Workflow by default to match the image */}
+          {/* Content */}
           <div id="content" className="bounce-in-right animated">
             <p 
               id="text" 
               className="text"
-              dangerouslySetInnerHTML={{ __html: contentData.workflow.text }}
+              dangerouslySetInnerHTML={{ __html: contentData[currentSection]?.text || contentData.workflow.text }}
             ></p>
             <img
               id="image"
-              src={contentData.workflow.image}
+              src={contentData[currentSection]?.image || contentData.workflow.image}
               loading="lazy"
-              alt="Workflow Image"
+              alt={`${currentSection} Image`}
               style={{
                 borderRadius: '15px',
                 width: '35%',
@@ -123,137 +232,6 @@ const AboutSlider = () => {
           </div>
         </div>
       </section>
-
-      {/* Client-side JavaScript for tab functionality */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            const contentData = ${JSON.stringify(contentData)};
-            let currentIndex = 2; // Start with workflow (index 2)
-            let interval;
-            let isManualClick = false;
-
-            function changeContent(section, isManual = false) {
-              const image = document.getElementById('image');
-              const text = document.getElementById('text');
-              const content = document.getElementById('content');
-              const screenWidth = window.screen.width;
-
-              // Clear any existing interval first
-              if (interval) {
-                clearInterval(interval);
-              }
-
-              // Set manual click flag
-              if (isManual) {
-                isManualClick = true;
-                // Reset the flag after a short delay
-                setTimeout(() => {
-                  isManualClick = false;
-                }, 100);
-              }
-
-              // Update active link first
-              document.querySelectorAll('.navbarabout a').forEach(link => {
-                link.classList.remove('active1');
-              });
-              
-              const activeLink = document.getElementById(section + '-link');
-              if (activeLink) {
-                activeLink.classList.add('active1');
-              }
-
-              // Update content immediately without animation interruption
-              if (contentData[section]) {
-                image.src = contentData[section].image;
-                text.innerHTML = contentData[section].text;
-              }
-
-              // Update progress bar
-              updateProgressBar(activeLink);
-
-              // Only restart interval if it's not a manual click
-              if (!isManual) {
-                interval = setInterval(autoChangeContent, 5000);
-              } else {
-                // For manual clicks, start a fresh 5-second timer
-                interval = setInterval(autoChangeContent, 5000);
-              }
-            }
-
-            function updateProgressBar(activeLink) {
-              if (!activeLink) return;
-              
-              const progressBar = document.getElementById('progress-bar');
-              const container = document.querySelector('.navbarabout');
-              
-              if (!progressBar || !container) return;
-
-              const rect = activeLink.getBoundingClientRect();
-              const containerRect = container.getBoundingClientRect();
-              const width = rect.width;
-              const left = rect.left - containerRect.left;
-
-              progressBar.style.transition = 'none';
-              progressBar.style.width = '0';
-              progressBar.style.left = left + 'px';
-              
-              setTimeout(() => {
-                progressBar.style.transition = 'width 5s linear';
-                progressBar.style.width = width + 'px';
-              }, 50);
-            }
-
-            function autoChangeContent() {
-              // Don't auto-change if it's a manual click
-              if (isManualClick) return;
-              
-              const sections = ['security', 'ecosystem', 'workflow', 'visibility'];
-              currentIndex = (currentIndex + 1) % sections.length;
-              
-              // Clear interval before changing content
-              if (interval) {
-                clearInterval(interval);
-              }
-              
-              changeContent(sections[currentIndex]);
-            }
-
-            // Initialize when DOM is loaded
-            document.addEventListener('DOMContentLoaded', function() {
-              // Delay initialization to prevent hydration mismatch
-              setTimeout(() => {
-                // Initialize with workflow section
-                changeContent('workflow');
-                
-                // Start auto-change interval
-                interval = setInterval(autoChangeContent, 5000);
-                
-                // Add click event listeners to navigation links
-                document.getElementById('security-link').addEventListener('click', function() {
-                  currentIndex = 0; // Update current index
-                  changeContent('security', true);
-                });
-                
-                document.getElementById('ecosystem-link').addEventListener('click', function() {
-                  currentIndex = 1; // Update current index
-                  changeContent('ecosystem', true);
-                });
-                
-                document.getElementById('workflow-link').addEventListener('click', function() {
-                  currentIndex = 2; // Update current index
-                  changeContent('workflow', true);
-                });
-                
-                document.getElementById('visibility-link').addEventListener('click', function() {
-                  currentIndex = 3; // Update current index
-                  changeContent('visibility', true);
-                });
-              }, 100); // Small delay to ensure hydration is complete
-            });
-          `
-        }}
-      />
     </>
   );
 };

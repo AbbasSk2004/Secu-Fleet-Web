@@ -4,7 +4,7 @@ const WhoWeAre = () => {
   return (
     <section className="who-we-are-section">
       <div className="video-background">
-        <video autoPlay loop muted playsInline>
+        <video autoPlay loop muted playsInline suppressHydrationWarning>
           <source src="/assets/videos/canva3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

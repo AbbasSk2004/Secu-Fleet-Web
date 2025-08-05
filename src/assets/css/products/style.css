@@ -45,7 +45,6 @@
 	width: 100%;
 	text-align: center;
 	margin-top: 8px;
-	display: inline-block;
 	float: left;
 	font-size: 13px;
 	width: 100%;
@@ -1538,9 +1537,7 @@
 	padding:100px 0px;
 	position:relative;
 }
-.clients .single-clients{
-	
-}
+
 .clients .single-clients img {
 	width: 100%;
 	cursor: pointer;
@@ -1742,9 +1739,7 @@
 	color: #2C2D3F;
 	margin-top: 30px;
 }
-.doctor-details-item .doctor-details-work .time-sidual{
-	
-}
+
 .doctor-details-item .doctor-details-work .time-sidual{
 	overflow:hidden;
 }
@@ -1755,7 +1750,6 @@
 	margin-bottom: 10px;
 }
 .doctor-details-item .doctor-details-work .time-sidual li span{
-	display:inline-block;
 	float:right;
 }
 .doctor-details-item .doctor-details-work .day-head .time {
@@ -2653,7 +2647,6 @@
 	margin-bottom: 10px;
 }
 .appointment.single-page .time-sidual li span{
-	display:inline-block;
 	float:right;
 }
 .appointment.single-page .day-head .time {
@@ -3886,7 +3879,6 @@
 	margin-bottom: 5px;
 }
 .footer .single-footer .time-sidual li span{
-	display:inline-block;
 	float:right;
 }
 .footer .single-footer .day-head .time {

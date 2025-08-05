@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Admin Page</title>
+    <style>
+        body{
+            background-color: black;
+        }
+    #fleet-quotations-table{
+        margin-left:0px;
+        margin-top: 50px;
+    }
+    table.one {                                  
+        margin-bottom: 3em; 
+        border-collapse:collapse;   }   
+         
+        td {                            /* removed the border from the table data rows  */
+        text-align: center;     
+        width: 10em;                    
+        padding: 1em;       }       
+         
+        th {                              /* removed the border from the table heading row  */
+        text-align: center;                 
+        padding: 1em;
+        background-color: rgb(6, 163, 218);       /* added a red background color to the heading cells  */
+        color: white;       }                 /* added a white font color to the heading text */
+         
+        tr {    
+        height: 1em;    }
+         
+        table tr:nth-child(even) {            /* added all even rows a #eee color  */
+            background-color: #eee;     }
+         
+        table tr:nth-child(odd) {            /* added all odd rows a #fff color  */
+        background-color:white !important;      }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div id="adminNavbar"></div>
+<script>
+  fetch('./adminNavbar.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('adminNavbar').innerHTML = html;
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>
+
+    </nav>
+    <h1>All Fleet Quotations</h1>
+    <table id="consulting-quotations-table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Type</th>
+                <th>Challanges</th>
+                <th>Support</th>
+                <th>Team</th>
+                <th>Timeline</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here by JavaScript -->
+        </tbody>
+    </table>
+    <script src="/js/admin/consultingadmin.js"></script>
+</body>
+</html>

@@ -15,6 +15,7 @@ const Features = () => {
         preload="auto" 
         playsInline 
         className="bg-video"
+        suppressHydrationWarning
         style={{
           position: 'absolute',
           top: 0,

@@ -6,7 +6,7 @@ const Quote = () => {
   return (
     <section className="quote">
       <div className="quoteVideo">
-        <video autoPlay loop muted>
+        <video autoPlay loop muted suppressHydrationWarning>
           <source src="/assets/videos/acc.mp4" type="video/mp4" />
         </video>
       </div>

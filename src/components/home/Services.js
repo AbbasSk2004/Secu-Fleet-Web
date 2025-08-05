@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <section className="service-section" style={{ backgroundColor: '#081f3e', backgroundImage: 'none' }}>
       <div className="wow fadeInUp" data-wow-delay="0.1s">
-        <div className="container py-5 cards">
+        <div className="container py-3 cards">
           <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{ maxWidth: '600px' }}>
             <h5 className="fw-bold text-primary text-uppercase">Our Services</h5>
             <h1 className="mb-0" style={{ color: 'white' }}>Custom IT Solutions for Your Successful Business</h1>
@@ -27,7 +27,7 @@ const Services = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow zoomIn service-card" data-wow-delay="0.6s">
-              <img src="/assets/images/works/hardware.webp" loading="lazy" alt="Hardware service Image" className="hardware" />
+              <img src="/assets/images/worldwide.jpg" loading="lazy" alt="Hardware service Image" className="hardware" />
               <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                 <div className="service-icon">
                   <i className="bi bi-motherboard w3-xxlarge text-white"></i>
@@ -55,7 +55,7 @@ const Services = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow zoomIn service-card" data-wow-delay="0.6s">
-              <img src="/assets/images/works/contracting.webp" loading="lazy" alt="Service Image" className="img-fluid rounded-top" />
+              <img src="/assets/images/contract.jpeg" loading="lazy" alt="Service Image" className="img-fluid rounded-top" />
               <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                 <div className="service-icon">
                   <span className="material-symbols-outlined w3-xxlarge" style={{ color: 'white' }}>hail</span>
@@ -83,7 +83,7 @@ const Services = () => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 wow zoomIn service-card" data-wow-delay="0.3s">
-              <img src="/assets/images/works/appDev.webp" loading="lazy" alt="app dev Service Image" className="img-fluid rounded-topz" />
+              <img src="/assets/images/appdev.jpeg" loading="lazy" alt="app dev Service Image" className="img-fluid rounded-topz" />
               <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                 <div className="service-icon">
                   <span className="material-symbols-outlined w3-xxlarge" style={{ color: 'white' }}>

@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import Topbar from '../components/home/Topbar';
 import HeroCarousel from '../components/home/HeroCarousel';
 import Facts from '../components/home/Facts';
 import WhoWeAre from '../components/home/WhoWeAre';
@@ -9,15 +8,14 @@ import VideoSection from '../components/home/VideoSection';
 import AboutSlider from '../components/home/AboutSlider';
 import Features from '../components/home/Features';
 import Services from '../components/home/Services';
+import Testimonials from '../components/home/Testimonials';
 import Quote from '../components/home/Quote';
 import FAQ from '../components/home/FAQ';
+import Blogs from '../components/home/Blogs';
 
 // Import CSS files needed for home page components
-
+// Load base styles first, then custom component styles last to ensure proper overrides
 import '../assets/css/index.css';
-import '../assets/css/aboutSlider.css';
-import '../assets/css/industrySlider.css';
-import '../assets/css/faq.css';
 import '../assets/css/animation.css';
 import '../assets/css/style.css';
 
@@ -34,8 +32,10 @@ const Home = () => {
         <AboutSlider />
         <Features />
         <Services />
+        <Testimonials />
         <Quote />
         <FAQ />
+        <Blogs />
       </Layout>
     </>
   );
