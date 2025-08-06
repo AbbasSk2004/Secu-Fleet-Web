@@ -532,39 +532,3 @@ h6,
     margin: 0;
     color: #f8f9fa;
 }
-
-/* Fix for social icons - override Bootstrap conflicts */
-.social-icon {
-    background-color: #06A3DA !important;
-    border-color: #06A3DA !important;
-    color: #FFFFFF !important;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    background-color: #FFFFFF !important;
-    border-color: #FFFFFF !important;
-    color: #06A3DA !important;
-    transform: translateY(-2px);
-}
-
-.social-icon i {
-    color: inherit !important;
-}
-
-/* More specific selector to override Bootstrap */
-.getInTouch .social-icon {
-    background-color: #06A3DA !important;
-    border-color: #06A3DA !important;
-    color: #FFFFFF !important;
-}
-
-.getInTouch .social-icon:hover {
-    background-color: #FFFFFF !important;
-    border-color: #FFFFFF !important;
-    color: #06A3DA !important;
-}
-
-.getInTouch .social-icon i {
-    color: inherit !important;
-}

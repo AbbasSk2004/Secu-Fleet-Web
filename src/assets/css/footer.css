@@ -263,6 +263,122 @@
   box-shadow: 0 8px 16px rgba(6, 163, 218, 0.3);
 }
 
+/* Footer Social Media Icons - Comprehensive Styles */
+.getInTouch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.getInTouch i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.getInTouch p {
+  margin: 0;
+  color: #f8f9fa;
+}
+
+/* Social Media Icons - Override all Bootstrap conflicts */
+.social-icon {
+  background-color: #06A3DA !important;
+  border-color: #06A3DA !important;
+  color: #FFFFFF !important;
+  transition: all 0.3s ease !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  margin-right: 8px !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: 1 !important;
+  border: 2px solid #06A3DA !important;
+}
+
+.social-icon:hover {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #06A3DA !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(6, 163, 218, 0.3) !important;
+  text-decoration: none !important;
+}
+
+.social-icon i {
+  color: inherit !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+/* More specific selectors to ensure override */
+.getInTouch .social-icon {
+  background-color: #06A3DA !important;
+  border-color: #06A3DA !important;
+  color: #FFFFFF !important;
+}
+
+.getInTouch .social-icon:hover {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #06A3DA !important;
+}
+
+.getInTouch .social-icon i {
+  color: inherit !important;
+}
+
+/* Footer specific social icon container */
+.footer .social-icon {
+  background-color: #06A3DA !important;
+  border-color: #06A3DA !important;
+  color: #FFFFFF !important;
+}
+
+.footer .social-icon:hover {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #06A3DA !important;
+}
+
+.footer .social-icon i {
+  color: inherit !important;
+}
+
+/* Override Bootstrap button classes specifically */
+.btn.social-icon {
+  background-color: #06A3DA !important;
+  border-color: #06A3DA !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+.btn.social-icon:hover {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #06A3DA !important;
+  box-shadow: 0 4px 8px rgba(6, 163, 218, 0.3) !important;
+}
+
+.btn-square.social-icon {
+  background-color: #06A3DA !important;
+  border-color: #06A3DA !important;
+  color: #FFFFFF !important;
+  overflow: visible !important;
+}
+
+.btn-square.social-icon:hover {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: #06A3DA !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .rating-modal-content {
@@ -281,6 +397,15 @@
   
   .footer-logo-section h1 {
     font-size: 1.3rem !important;
+  }
+  
+  .social-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .social-icon i {
+    font-size: 14px !important;
   }
 }
 
@@ -303,6 +428,16 @@
   .rating-submit-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
+  }
+  
+  .social-icon {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 6px !important;
+  }
+  
+  .social-icon i {
+    font-size: 12px !important;
   }
 }
 

@@ -173,6 +173,36 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive" 
           dangerouslySetInnerHTML={{
             __html: `
+              // Scroll to top on page refresh
+              window.addEventListener('beforeunload', function() {
+                window.scrollTo(0, 0);
+              });
+              
+              // Also scroll to top when page loads
+              window.addEventListener('load', function() {
+                window.scrollTo(0, 0);
+              });
+              
+              // Additional scroll to top for route changes in Next.js
+              if (typeof window !== 'undefined') {
+                // Store scroll position before unload
+                window.addEventListener('beforeunload', function() {
+                  sessionStorage.setItem('scrollPosition', '0');
+                });
+                
+                // Scroll to top on page load
+                window.addEventListener('load', function() {
+                  const scrollPosition = sessionStorage.getItem('scrollPosition');
+                  if (scrollPosition === '0' || scrollPosition === null) {
+                    window.scrollTo({
+                      top: 0,
+                      left: 0,
+                      behavior: 'instant'
+                    });
+                  }
+                });
+              }
+              
               // FAQ Functionality
               document.addEventListener('DOMContentLoaded', function() {
                 const faqItems = document.querySelectorAll('.faq-item');
