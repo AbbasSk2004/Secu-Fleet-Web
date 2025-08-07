@@ -53,9 +53,6 @@ margin-top: 40px;
 .section-title h5{
     font-size:1.1em;
 }
-.growth-text h5{
-    font-size:1.1em;
-}
 .containerBack {
     background: url('https://i.ibb.co/M6jg3Vx/dubai-s-stunning-skyline-wallpaper.jpg') no-repeat center center/cover;
     height: 50vh;
@@ -344,68 +341,249 @@ color: white;
 }
 
 
+/* Modern Growth Section Styles */
 .growth-section {
-    background-color: #1a2942;
+    background: linear-gradient(135deg, #1a2942 0%, #091E3E 100%);
     color: white;
-    padding: 20px;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.growth-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: url('https://i.ibb.co/g3cLNBK/Untitled-10-11.png') no-repeat center center/cover;
-    /* width: 90%; */
-    /* margin-left: 5%; */
+    opacity: 0.1;
+    z-index: 1;
 }
 
-.growth-content {
-    display: flex;
-    gap: 20px;
+.growth-section .container {
+    position: relative;
+    z-index: 2;
 }
 
-.growth-content img {
-    width: 25%;
-    height: 25%;
-    margin-left: 250px;
-    margin-top: 180px;
-}
-
-.growth-text {
-    flex: 1;
-    max-width: 700px;
-    margin: 0 auto;
+/* Image Styles */
+.growth-image-wrapper {
+    position: relative;
     padding: 20px;
-    border: 0px solid #ccc;
+}
+
+.growth-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #06A3DA, #34AD54);
+    border-radius: 20px;
+    opacity: 0.1;
+    transform: rotate(-2deg);
+}
+
+.growth-image {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    border: 3px solid rgba(6, 163, 218, 0.3);
+}
+
+.growth-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(6, 163, 218, 0.3);
+}
+
+.growth-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(6, 163, 218, 0.1), rgba(52, 173, 84, 0.1));
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* Content Styles */
+.growth-content-wrapper {
+    padding: 20px;
+}
+
+.growth-content-wrapper .section-title h5 {
     font-size: 1.1em;
-
-
+    letter-spacing: 1px;
 }
 
-.growth-text ul {
-    list-style-type: disc;
-    color: white;
-    padding-left: 0;
-
+.growth-content-wrapper .section-title h1 {
+    background: linear-gradient(45deg, #ffffff, #06A3DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
 }
 
-.growth-text li::before {
-    content: "•";
-    color: WHITE;
-    display: inline-block;
-    width: 1.5em;
-    margin-left: -1em;
+.growth-description .lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.growth-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Feature Items */
+.feature-item {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(6, 163, 218, 0.2) !important;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(6, 163, 218, 0.5) !important;
+    box-shadow: 0 10px 30px rgba(6, 163, 218, 0.2);
+    background: rgba(6, 163, 218, 0.1) !important;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+}
+
+.feature-icon .bg-primary {
+    background: linear-gradient(45deg, #06A3DA, #34AD54) !important;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon .bg-primary {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(6, 163, 218, 0.4);
+}
+
+.feature-content h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.feature-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .growth-section {
+        padding: 60px 0;
+    }
     
+    .growth-image-wrapper {
+        padding: 15px;
+    }
 }
 
-.growth-section h1 {
-    color: white;
+@media (max-width: 992px) {
+    .growth-section {
+        padding: 50px 0;
+    }
+    
+    .growth-content-wrapper .section-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .growth-description .lead {
+        font-size: 1.1rem;
+    }
+    
+    .growth-description p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .growth-section {
+        padding: 40px 0;
+    }
+    
+    .growth-image-wrapper {
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .growth-content-wrapper {
+        padding: 10px;
+    }
+    
+    .growth-content-wrapper .section-title h1 {
+        font-size: 2rem;
+    }
+    
+    .feature-item {
+        padding: 20px !important;
+    }
+    
+    .feature-icon .bg-primary {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .feature-content h6 {
+        font-size: 1rem;
+    }
+    
+    .feature-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .growth-section {
+        padding: 30px 0;
+    }
+    
+    .growth-content-wrapper .section-title h1 {
+        font-size: 1.75rem;
+    }
+    
+    .growth-description .lead {
+        font-size: 1rem;
+    }
+    
+    .feature-item {
+        padding: 15px !important;
+    }
+    
+    .feature-icon .bg-primary {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .feature-content h6 {
+        font-size: 0.9rem;
+    }
+    
+    .feature-content p {
+        font-size: 0.85rem;
+    }
 }
 
 .consulting-expertise-list {
     color: #06a3da;
     font-size: 30px;
-}
-
-
-
-
-.bullet {
-    color: white;
 }
 
 .contain {
@@ -446,7 +624,7 @@ color: white;
 
 @media (max-width: 1200px) {
     .services-grid {
-        padding: 30px 50px;
+        padding: 30px 40px;
     }
 
     .services-wrapper {
@@ -456,11 +634,6 @@ color: white;
 
     .flip-card {
         height: 260px;
-    }
-
-    .growth-content img {
-        width: 35%;
-        margin-left: 20px;
     }
 
     .contain {
@@ -507,15 +680,6 @@ color: white;
     .description-text {
         font-size: 13px;
     }
-
-    .growth-content {
-        flex-direction: column;
-    }
-
-    .growth-content img {
-        width: 50%;
-        margin: 0 auto 20px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -554,11 +718,6 @@ color: white;
 
     .description-text {
         font-size: 12px;
-    }
-
-    .growth-text {
-        padding: 15px;
-        font-size: 1em;
     }
 
     .containerBack h1 {
@@ -616,10 +775,6 @@ color: white;
 
     .description-text {
         font-size: 11px;
-    }
-
-    .growth-content img {
-        width: 70%;
     }
 
     .box {
