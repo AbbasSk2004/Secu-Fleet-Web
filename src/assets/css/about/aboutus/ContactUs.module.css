@@ -1,0 +1,195 @@
+/* ContactUs Component Styles */
+.contactSection {
+  background: linear-gradient(135deg, #e2f1f7 0%, #f8fcff 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%2306A3DA" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.contactContent {
+  position: relative;
+  z-index: 2;
+}
+
+.workWithUs {
+  color: #06A3DA;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.contactTitle {
+  color: #091E3E;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.contactTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #06A3DA, #34AD54);
+  border-radius: 2px;
+}
+
+.contactButton {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactButton:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.buttonContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #06A3DA 0%, #34AD54 100%);
+  border-radius: 50px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 30px rgba(6, 163, 218, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.buttonContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contactButton:hover .buttonContainer::before {
+  left: 100%;
+}
+
+.contactButton:hover .buttonContainer {
+  box-shadow: 0 15px 40px rgba(6, 163, 218, 0.4);
+  transform: scale(1.05);
+}
+
+.buttonIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.contactButton:hover .buttonIcon {
+  transform: rotate(360deg);
+}
+
+.buttonText {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 60px 0;
+  }
+  
+  .contactTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .buttonContainer {
+    padding: 16px 32px;
+  }
+  
+  .buttonText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contactTitle {
+    font-size: 1.75rem;
+  }
+  
+  .buttonContainer {
+    padding: 14px 28px;
+  }
+  
+  .buttonIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .buttonText {
+    font-size: 0.85rem;
+  }
+}
+
+/* Animation Classes */
+.fadeInUp {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scaleIn {
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+} 

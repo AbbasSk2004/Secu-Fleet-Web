@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import Script from 'next/script';
+import BootstrapProvider from '../components/providers/BootstrapProvider';
 
 // Import Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -129,16 +130,57 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <BootstrapProvider>
+          {children}
+        </BootstrapProvider>
         
-        {/* Load jQuery first */}
-        <Script src="/assets/js/products/jquery.min.js" strategy="afterInteractive" />
+        {/* Load jQuery first - this is critical for Bootstrap */}
+        <Script 
+          src="/assets/js/products/jquery.min.js" 
+          strategy="beforeInteractive"
+        />
         
         {/* Load Popper.js after jQuery */}
-        <Script src="/assets/js/products/popper.min.js" strategy="afterInteractive" />
+        <Script 
+          src="/assets/js/products/popper.min.js" 
+          strategy="beforeInteractive"
+        />
         
-        {/* Load Bootstrap after Popper */}
-        <Script src="/assets/js/products/bootstrap.min.js" strategy="afterInteractive" />
+        {/* Load Bootstrap from local assets - must be after jQuery */}
+        <Script 
+          src="/assets/js/products/bootstrap.min.js" 
+          strategy="beforeInteractive"
+        />
+        
+        {/* Verify dependencies are loaded */}
+        <Script 
+          id="dependency-check" 
+          strategy="afterInteractive" 
+          dangerouslySetInnerHTML={{
+            __html: `
+              console.log('Layout: Checking script dependencies...');
+              if (typeof window !== 'undefined') {
+                if (window.jQuery) {
+                  console.log('Layout: jQuery loaded successfully - version:', window.jQuery.fn.jquery);
+                } else {
+                  console.error('Layout: jQuery not found!');
+                }
+                
+                if (window.bootstrap) {
+                  console.log('Layout: Bootstrap loaded successfully');
+                } else {
+                  console.error('Layout: Bootstrap not found!');
+                }
+                
+                if (window.Popper) {
+                  console.log('Layout: Popper.js loaded successfully');
+                } else {
+                  console.error('Layout: Popper.js not found!');
+                }
+              }
+            `
+          }}
+        />
         
         {/* Load WOW.js */}
         <Script src="/assets/lib/wow/wow.min.js" strategy="afterInteractive" />
@@ -163,7 +205,6 @@ export default function RootLayout({ children }) {
         <Script src="https://player.vimeo.com/api/player.js" strategy="afterInteractive" />
         
         {/* Load custom JavaScript files */}
-        <Script src="/assets/js/industrySlider.js" strategy="afterInteractive" />
         <Script src="/assets/js/faq.js" strategy="afterInteractive" />
         <Script src="/assets/js/main.js" strategy="afterInteractive" />
         
@@ -278,63 +319,6 @@ export default function RootLayout({ children }) {
                     content.style.display = 'none';
                   });
                 }
-                
-                // Industry Slider Functionality
-                let currentIndex = 0;
-                let slidesToShow = 3;
-                
-                function getSlidesToShow() {
-                  const width = window.innerWidth;
-                  if (width <= 480) return 1;
-                  if (width <= 768) return 2;
-                  return 3;
-                }
-                
-                function updateSlider() {
-                  const slider = document.querySelector('.Islider');
-                  if (slider) {
-                    const gapPercentage = 2;
-                    const slideWidth = 100 / slidesToShow;
-                    const translateX = currentIndex * (slideWidth + gapPercentage);
-                    slider.style.transform = \`translateX(-\${translateX}%)\`;
-                  }
-                }
-                
-                function nextSlide() {
-                  const totalSlides = 11;
-                  const maxIndex = totalSlides - slidesToShow;
-                  currentIndex = (currentIndex + 1) % (maxIndex + 1);
-                  updateSlider();
-                }
-                
-                function prevSlide() {
-                  const totalSlides = 11;
-                  const maxIndex = totalSlides - slidesToShow;
-                  currentIndex = (currentIndex - 1 + (maxIndex + 1)) % (maxIndex + 1);
-                  updateSlider();
-                }
-                
-                // Initialize slider
-                slidesToShow = getSlidesToShow();
-                updateSlider();
-                
-                // Add event listeners for slider arrows
-                const prevArrow = document.getElementById('IprevArrow');
-                const nextArrow = document.getElementById('InextArrow');
-                
-                if (prevArrow) {
-                  prevArrow.addEventListener('click', prevSlide);
-                }
-                if (nextArrow) {
-                  nextArrow.addEventListener('click', nextSlide);
-                }
-                
-                // Handle resize
-                window.addEventListener('resize', () => {
-                  slidesToShow = getSlidesToShow();
-                  currentIndex = 0;
-                  updateSlider();
-                });
                 
                 // About Slider Functionality
                 const navLinks = document.querySelectorAll('.nav-link');

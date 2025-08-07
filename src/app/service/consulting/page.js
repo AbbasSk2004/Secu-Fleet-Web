@@ -5,7 +5,6 @@ import ResourcesSection from '../../../components/service/consulting/ResourcesSe
 import ServicesGrid from '../../../components/service/consulting/ServicesGrid';
 import GrowthSection from '../../../components/service/consulting/GrowthSection';
 import StrategySection from '../../../components/service/consulting/StrategySection';
-import FeaturesGrid from '../../../components/service/consulting/FeaturesGrid';
 import ConsultingExpertise from '../../../components/service/consulting/ConsultingExpertise';
 
 // Import CSS files
@@ -22,7 +21,6 @@ const ConsultingPage = () => {
         <ServicesGrid />
         <GrowthSection />
         <StrategySection />
-        <FeaturesGrid />
         <ConsultingExpertise />
       </Layout>
     </>

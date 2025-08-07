@@ -42,13 +42,6 @@ background-color: #091e3e5a ;
 .consultBack .row {
 width: 100%;
 }
-.mobile{
-background-color: #091e3e5a  ;
-}
-.mobileImg img{
-margin-top: 40px;
-
-}
 }
 .section-title h5{
     font-size:1.1em;
@@ -62,9 +55,6 @@ margin-top: 40px;
     text-align: center;
     color: white;
     position: relative;
-}
-#section2 h1, #section2 p{
-color: white;
 }
 
 .containerBack::before {
@@ -586,38 +576,6 @@ color: white;
     font-size: 30px;
 }
 
-.contain {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: -50px auto 0 auto;
-    height: 300px;
-}
-
-.box {
-    background-color: #eaf6fa;
-    border: 0px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 1.5em;
-    gap: 10px;
-}
-
-.box i {
-    color: #4a90e2;
-    margin-right: 10px;
-}
-
-.box-text {
-    max-width: 500px;
-    line-height: 1.6;
-    border: 0px solid #ddd;
-    border-radius: 8px;
-    FONT-SIZE: 1.2EM;
-}
 .mb-4{
     font-size: 1.3em;
 }
@@ -634,12 +592,6 @@ color: white;
 
     .flip-card {
         height: 260px;
-    }
-
-    .contain {
-        margin-left: 50px;
-        margin-right: 50px;
-        width: auto;
     }
 }
 
@@ -723,11 +675,6 @@ color: white;
     .containerBack h1 {
         font-size: 2.5em;
     }
-
-    .box {
-        font-size: 1.2em;
-        padding: 15px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -775,10 +722,5 @@ color: white;
 
     .description-text {
         font-size: 11px;
-    }
-
-    .box {
-        font-size: 1em;
-        padding: 10px;
     }
 }

@@ -1,6 +1,26 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 
 const Facts = () => {
+  const counterRefs = useRef([]);
+
+  useEffect(() => {
+    // Wait for DOM to be ready and jQuery to be available
+    const timer = setTimeout(() => {
+      if (typeof window !== 'undefined' && window.jQuery && window.jQuery.fn.counterUp) {
+        // Initialize counter-up for all elements with data-toggle="counter-up"
+        window.jQuery('[data-toggle="counter-up"]').counterUp({
+          delay: 10,
+          time: 2000
+        });
+      }
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <section className="facts" id="factsSection">
       <div className="container-fluid facts py-5 pt-lg-0">

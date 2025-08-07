@@ -1,7 +1,105 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
 import '../../assets/css/industrySlider.css';
 
 const IndustrySlider = () => {
+  const sliderRef = useRef(null);
+  const currentIndexRef = useRef(0);
+  const slidesToShowRef = useRef(3);
+  const autoSlideIntervalRef = useRef(null);
+
+  const getSlidesToShow = () => {
+    const width = window.innerWidth;
+    if (width <= 480) {
+      return 1; 
+    } else if (width <= 768) {
+      return 2;
+    } else {
+      return 3;
+    }
+  };
+
+  const updateSlider = () => {
+    const slider = sliderRef.current;
+    if (slider) {
+      const gapPercentage = 2; 
+      const slideWidth = (100 / slidesToShowRef.current);
+      slider.style.transform = `translateX(-${currentIndexRef.current * (slideWidth + gapPercentage)}%)`;
+    }
+  };
+
+  const nextSlide = () => {
+    const slides = document.querySelectorAll('.Islide');
+    const totalSlides = slides.length;
+    currentIndexRef.current = (currentIndexRef.current + 1) % (totalSlides - slidesToShowRef.current + 1);
+    updateSlider();
+  };
+
+  const prevSlide = () => {
+    const slides = document.querySelectorAll('.Islide');
+    const totalSlides = slides.length;
+    currentIndexRef.current = (currentIndexRef.current - 1 + (totalSlides - slidesToShowRef.current + 1)) % (totalSlides - slidesToShowRef.current + 1);
+    updateSlider();
+  };
+
+  const startAutoSlide = () => {
+    clearInterval(autoSlideIntervalRef.current);  
+    autoSlideIntervalRef.current = setInterval(nextSlide, 3000);  
+  };
+
+  useEffect(() => {
+    // Initialize slider
+    slidesToShowRef.current = getSlidesToShow();
+    currentIndexRef.current = 0;
+    
+    // Wait for DOM to be ready
+    const timer = setTimeout(() => {
+      updateSlider();
+      
+      // Add event listeners for slider arrows
+      const prevArrow = document.getElementById('IprevArrow');
+      const nextArrow = document.getElementById('InextArrow');
+      
+      if (prevArrow) {
+        prevArrow.addEventListener('click', prevSlide);
+      }
+      if (nextArrow) {
+        nextArrow.addEventListener('click', nextSlide);
+      }
+      
+      // Start auto-slide
+      startAutoSlide();
+    }, 100);
+
+    // Handle resize
+    const handleResize = () => {
+      slidesToShowRef.current = getSlidesToShow();
+      currentIndexRef.current = 0;
+      updateSlider();
+      startAutoSlide();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      clearTimeout(timer);
+      clearInterval(autoSlideIntervalRef.current);
+      window.removeEventListener('resize', handleResize);
+      
+      // Remove event listeners
+      const prevArrow = document.getElementById('IprevArrow');
+      const nextArrow = document.getElementById('InextArrow');
+      
+      if (prevArrow) {
+        prevArrow.removeEventListener('click', prevSlide);
+      }
+      if (nextArrow) {
+        nextArrow.removeEventListener('click', nextSlide);
+      }
+    };
+  }, []);
+
   return (
     <section className="industrySlider" style={{ backgroundColor: '#081f3e', paddingBottom: '3%' }}>
       <div className="expertise-section">
@@ -26,7 +124,7 @@ const IndustrySlider = () => {
         <div className="Iarrow left" id="IprevArrow"></div>
         <div className="Iarrow right" id="InextArrow"></div>
 
-        <div className="Islider">
+        <div className="Islider" ref={sliderRef}>
           <div className="Islide">
             <img src="https://i.ibb.co/88tc88W/car.png" loading="lazy" alt="Car Tracking" />
             <div className="Islide-caption"><b>Car Tracking</b></div>
