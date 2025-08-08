@@ -323,7 +323,7 @@ const Navbar = () => {
           </div>
           
           <div className="dropdown-content" id="industriesDropdownContent" style={{ display: industriesDropdownOpen ? 'flex' : 'none' }}>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/construction-and-mining" onClick={closeAll}>
               <img src="/assets/images/icons/industries/construction.png" alt="construction icon" loading="lazy" />
               <p>Construction & Mining</p>
             </Link>
