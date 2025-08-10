@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../assets/css/web-development.css';
 
 const OurAdvantages = () => {
   const advantages = [

@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import '../../../assets/css/industries/construction-and-mining/feature-group-mining-control.css';
 
 const features = [
   {
@@ -73,19 +74,14 @@ const FeatureGroupMiningControl = () => {
   }, []);
 
   return (
-    <section
-      className="py-5"
-      style={{
-        backgroundColor: '#0b1a2e',
-        backgroundImage: 'url(/images/mining-map-bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        color: '#fff'
-      }}
-    >
+    <section className="mining-control-section">
+      {/* Background Layer */}
+      <div className="mining-background"></div>
+      
       <div className="container">
-        <div className="text-center mb-5">
-          <h2 className="display-5 fw-bold text-white">Mining Cargo & Equipment Control</h2>
+        <div className="section-title wow fadeInUp" data-wow-delay="0.1s">
+          <h5 className="fw-bold text-primary text-uppercase">Mining Control</h5>
+          <h1 className="mb-0">Mining Cargo & Equipment Control</h1>
           <p className="text-muted">
             Track, manage, and protect mining operations with GPS, sensors & geofencing.
           </p>
@@ -99,24 +95,25 @@ const FeatureGroupMiningControl = () => {
               ref={(el) => (cardsRef.current[idx] = el)}
             >
               <div
-                className={`card h-100 bg-dark text-white border-0 shadow-lg p-3 animate-fade ${
+                className={`mining-feature-card wow zoomIn animate-fade ${
                   visible[idx] ? 'show' : ''
                 }`}
+                data-wow-delay={`${0.2 + idx * 0.1}s`}
               >
-                <div className="card-body">
-                  <div className="display-5 mb-3">{feature.icon}</div>
-                  <h5 className="card-title">{feature.title}</h5>
-                  <p className="card-text text-light">{feature.desc}</p>
+                <div className="mining-feature-icon">
+                  {feature.icon}
                 </div>
-                <div className="card-footer d-flex justify-content-between align-items-center bg-transparent border-0 pt-0">
-                  <span className="fw-bold fs-6">{feature.stat}</span>
+                <h5 className="mining-feature-title">{feature.title}</h5>
+                <p className="mining-feature-description">{feature.desc}</p>
+                <div className="mining-feature-footer">
+                  <span className="mining-feature-stat">{feature.stat}</span>
                   <span
-                    className={`badge ${
+                    className={`mining-feature-badge ${
                       feature.badge === 'green'
-                        ? 'bg-success'
+                        ? 'badge-success'
                         : feature.badge === 'yellow'
-                        ? 'bg-warning text-dark'
-                        : 'bg-danger'
+                        ? 'badge-warning'
+                        : 'badge-danger'
                     }`}
                   >
                     {feature.badge.toUpperCase()}
@@ -127,8 +124,8 @@ const FeatureGroupMiningControl = () => {
           ))}
         </div>
 
-        <div className="text-center mt-4">
-          <small className="text-secondary fst-italic">
+        <div className="mining-footer-note wow fadeInUp" data-wow-delay="0.8s">
+          <small className="fst-italic">
             Live data visualized through glowing zones, alerts, and performance panels.
           </small>
         </div>

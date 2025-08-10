@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Script from 'next/script';
+import '@/assets/css/faq.css';
 
 const FAQ = () => {
   return (

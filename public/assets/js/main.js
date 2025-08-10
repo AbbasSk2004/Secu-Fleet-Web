@@ -1,9 +1,11 @@
 (function ($) {
     "use strict";
 
+    // Global flag to prevent multiple initializations
+    window.secufleetCountersInitialized = false;
+
     // Initiate the wowjs
     new WOW().init();
-
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -41,12 +43,135 @@
         }
     });
 
+    // Enhanced Facts counter initialization function
+    function initializeCounters() {
+        console.log('Attempting to initialize counters...');
+        
+        // Check if already initialized
+        if (window.secufleetCountersInitialized) {
+            console.log('Counters already initialized, skipping...');
+            return;
+        }
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
+        // Verify all dependencies are available
+        if (!window.jQuery || !$.fn.waypoint || !$.fn.counterUp) {
+            console.log('Dependencies not ready yet. jQuery:', !!window.jQuery, 'Waypoint:', !!($.fn && $.fn.waypoint), 'CounterUp:', !!($.fn && $.fn.counterUp));
+            return false;
+        }
+
+        const $counterElements = $('[data-toggle="counter-up"]');
+        console.log('Found counter elements:', $counterElements.length);
+
+        if ($counterElements.length === 0) {
+            console.log('No counter elements found, will retry later...');
+            return false;
+        }
+
+        let initializedCount = 0;
+        $counterElements.each(function() {
+            const $this = $(this);
+            
+            // Only initialize if not already initialized
+            if (!$this.data('waypoint') && !$this.data('counterup-nums') && !$this.hasClass('counter-initialized')) {
+                try {
+                    $this.counterUp({
+                        delay: 10,
+                        time: 2000
+                    });
+                    $this.addClass('counter-initialized');
+                    initializedCount++;
+                    console.log('Initialized counter for element:', this);
+                } catch (error) {
+                    console.error('Error initializing counter:', error);
+                }
+            }
+        });
+
+        if (initializedCount > 0) {
+            window.secufleetCountersInitialized = true;
+            console.log('Successfully initialized', initializedCount, 'counters');
+            return true;
+        }
+        
+        return false;
+    }
+
+    // Multiple initialization strategies for maximum reliability
+
+    // Strategy 1: DOM ready with retries
+    $(document).ready(function() {
+        console.log('DOM ready, attempting counter initialization...');
+        
+        function tryInitWithRetry(attempts = 0) {
+            const maxAttempts = 20; // 2 seconds total (20 * 100ms)
+            
+            if (initializeCounters()) {
+                return; // Success!
+            }
+            
+            if (attempts < maxAttempts) {
+                setTimeout(() => tryInitWithRetry(attempts + 1), 100);
+            } else {
+                console.warn('Failed to initialize counters after', maxAttempts, 'attempts');
+            }
+        }
+        
+        // Start trying after a small delay to ensure React has rendered
+        setTimeout(() => tryInitWithRetry(), 200);
     });
+
+    // Strategy 2: Window load event
+    $(window).on('load', function() {
+        console.log('Window loaded, checking counter initialization...');
+        if (!window.secufleetCountersInitialized) {
+            setTimeout(initializeCounters, 100);
+        }
+    });
+
+    // Strategy 3: Use MutationObserver to detect when new counter elements are added (for React routing)
+    if (typeof MutationObserver !== 'undefined') {
+        const observer = new MutationObserver(function(mutations) {
+            let shouldReinitialize = false;
+            
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) { // Element node
+                            // Check if the node itself or its children contain counter elements
+                            if ((node.matches && node.matches('[data-toggle="counter-up"]')) ||
+                                (node.querySelector && node.querySelector('[data-toggle="counter-up"]'))) {
+                                shouldReinitialize = true;
+                                console.log('Detected new counter elements added to DOM');
+                            }
+                        }
+                    });
+                }
+            });
+            
+            if (shouldReinitialize) {
+                // Reset the global flag to allow re-initialization
+                window.secufleetCountersInitialized = false;
+                setTimeout(initializeCounters, 150);
+            }
+        });
+        
+        // Start observing after DOM is ready
+        $(document).ready(function() {
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+    }
+
+    // Strategy 4: Global function for manual triggering (for debugging or edge cases)
+    window.reinitializeCounters = function() {
+        console.log('Manual counter reinitialization triggered');
+        window.secufleetCountersInitialized = false;
+        // Reset all elements
+        $('[data-toggle="counter-up"]').removeClass('counter-initialized');
+        initializeCounters();
+    };
     
     
     // Back to top button

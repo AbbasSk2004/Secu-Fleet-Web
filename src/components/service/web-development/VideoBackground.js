@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../assets/css/animation.css';
 
 const VideoBackground = () => {
   return (

@@ -184,19 +184,37 @@ export default function RootLayout({ children }) {
         
         {/* Load WOW.js */}
         <Script src="/assets/lib/wow/wow.min.js" strategy="afterInteractive" />
+        
+        {/* Initialize WOW.js after it loads */}
         <Script 
           id="wowjs-init" 
           strategy="afterInteractive" 
           dangerouslySetInnerHTML={{
-            __html: `if (typeof window !== 'undefined' && window.WOW) { new WOW({ boxClass: 'wow', animateClass: 'animated', offset: 0, mobile: false, live: true }).init(); }`
+            __html: `
+              function initWOW() {
+                if (typeof window !== 'undefined' && window.WOW) { 
+                  new WOW({ boxClass: 'wow', animateClass: 'animated', offset: 0, mobile: false, live: true }).init();
+                  console.log('WOW.js initialized successfully');
+                } else {
+                  setTimeout(initWOW, 50);
+                }
+              }
+              initWOW();
+            `
           }}
         />
         
-        {/* Load Waypoints library */}
-        <Script src="/assets/lib/waypoints/waypoints.min.js" strategy="afterInteractive" />
+        {/* Load Waypoints library first - required by CounterUp */}
+        <Script 
+          src="/assets/lib/waypoints/waypoints.min.js" 
+          strategy="afterInteractive"
+        />
         
-        {/* Load Counterup library */}
-        <Script src="/assets/lib/counterup/counterup.min.js" strategy="afterInteractive" />
+        {/* Load Counterup library after Waypoints */}
+        <Script 
+          src="/assets/lib/counterup/counterup.min.js" 
+          strategy="afterInteractive"
+        />
         
         {/* Load Owl Carousel library */}
         <Script src="/assets/lib/owlcarousel/owl.carousel.min.js" strategy="afterInteractive" />
@@ -204,9 +222,41 @@ export default function RootLayout({ children }) {
         {/* Load Vimeo player */}
         <Script src="https://player.vimeo.com/api/player.js" strategy="afterInteractive" />
         
-        {/* Load custom JavaScript files */}
+        {/* Load custom JavaScript files - ensuring dependencies are loaded first */}
         <Script src="/assets/js/faq.js" strategy="afterInteractive" />
-        <Script src="/assets/js/main.js" strategy="afterInteractive" />
+        
+        {/* Load main.js last after all dependencies with proper dependency checking */}
+        <Script 
+          id="main-js-loader"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function loadMainJS() {
+                // Check if all dependencies are loaded
+                if (typeof window !== 'undefined' && 
+                    window.jQuery && 
+                    window.jQuery.fn.waypoint && 
+                    window.jQuery.fn.counterUp) {
+                  
+                  console.log('All dependencies loaded: jQuery, Waypoints, CounterUp');
+                  
+                  // Load main.js
+                  const script = document.createElement('script');
+                  script.src = '/assets/js/main.js';
+                  script.onload = () => console.log('Main.js loaded and executed successfully');
+                  script.onerror = () => console.error('Failed to load Main.js');
+                  document.head.appendChild(script);
+                } else {
+                  console.log('Waiting for dependencies: jQuery:', !!window.jQuery, 'Waypoints:', !!(window.jQuery && window.jQuery.fn.waypoint), 'CounterUp:', !!(window.jQuery && window.jQuery.fn.counterUp));
+                  setTimeout(loadMainJS, 100);
+                }
+              }
+              
+              // Start checking after a small delay to allow other scripts to load
+              setTimeout(loadMainJS, 200);
+            `
+          }}
+        />
         
         {/* Custom JavaScript for interactivity */}
         <Script 

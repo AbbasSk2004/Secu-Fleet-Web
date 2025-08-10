@@ -1,0 +1,275 @@
+/* SecuFleet Job Content Section Styles */
+.secufleet-job-content-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.secufleet-job-content-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.secufleet-section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(6, 163, 218, 0.1);
+}
+
+.secufleet-section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, #05a0d0 100%);
+    border-radius: 12px;
+    margin-right: 1rem;
+    box-shadow: 0 4px 15px rgba(6, 163, 218, 0.3);
+}
+
+.secufleet-section-icon .material-symbols-outlined {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.secufleet-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    position: relative;
+}
+
+.secufleet-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.secufleet-section-content {
+    color: #495057;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.secufleet-content-wrapper {
+    background: rgba(6, 163, 218, 0.02);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+}
+
+.secufleet-section-list-container {
+    margin-top: 1rem;
+}
+
+.secufleet-section-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.secufleet-list-item {
+    position: relative;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.secufleet-list-item:last-child {
+    margin-bottom: 0;
+}
+
+.secufleet-list-item-content {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    background: rgba(6, 163, 218, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(6, 163, 218, 0.1);
+    transition: all 0.3s ease;
+}
+
+.secufleet-list-item:hover .secufleet-list-item-content {
+    background: rgba(6, 163, 218, 0.05);
+    border-color: rgba(6, 163, 218, 0.2);
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(6, 163, 218, 0.1);
+}
+
+.secufleet-list-bullet {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.secufleet-list-item:hover .secufleet-list-bullet {
+    background: var(--secondary);
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(52, 173, 84, 0.3);
+}
+
+.secufleet-list-text {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.secufleet-no-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(6, 163, 218, 0.02);
+    border-radius: 12px;
+    border: 2px dashed rgba(6, 163, 218, 0.2);
+    color: #6c757d;
+}
+
+.secufleet-no-content .secufleet-no-content-icon {
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.secufleet-no-content-text {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .secufleet-job-content-container {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .secufleet-section-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .secufleet-section-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.75rem;
+    }
+    
+    .secufleet-section-icon .material-symbols-outlined {
+        font-size: 1.25rem;
+    }
+    
+    .secufleet-section-title {
+        font-size: 1.25rem;
+    }
+    
+    .secufleet-section-title::after {
+        bottom: -0.75rem;
+        width: 50px;
+        height: 2px;
+    }
+    
+    .secufleet-content-wrapper {
+        padding: 1rem;
+    }
+    
+    .secufleet-section-content {
+        font-size: 0.95rem;
+    }
+    
+    .secufleet-list-item-content {
+        padding: 0.75rem;
+    }
+    
+    .secufleet-list-text {
+        font-size: 0.95rem;
+    }
+    
+    .secufleet-no-content {
+        padding: 1.5rem;
+    }
+    
+    .secufleet-no-content .secufleet-no-content-icon {
+        font-size: 1.25rem;
+    }
+    
+    .secufleet-no-content-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .secufleet-job-content-container {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+    
+    .secufleet-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .secufleet-section-icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 0;
+    }
+    
+    .secufleet-section-icon .material-symbols-outlined {
+        font-size: 1.1rem;
+    }
+    
+    .secufleet-section-title {
+        font-size: 1.1rem;
+    }
+    
+    .secufleet-section-content {
+        font-size: 0.9rem;
+    }
+    
+    .secufleet-list-item-content {
+        padding: 0.625rem;
+    }
+    
+    .secufleet-list-bullet {
+        width: 10px;
+        height: 10px;
+        margin-right: 0.75rem;
+    }
+    
+    .secufleet-list-text {
+        font-size: 0.9rem;
+    }
+    
+    .secufleet-no-content {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .secufleet-no-content .secufleet-no-content-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+} 

@@ -8,12 +8,6 @@ import OurAdvantages from '../../../components/service/web-development/OurAdvant
 import QuoteSection from '../../../components/service/web-development/QuoteSection';
 import FAQSection from '../../../components/service/web-development/FAQSection';
 
-// Import CSS files
-import '../../../assets/css/Web.css';
-import '../../../assets/css/animation.css';
-import '../../../assets/css/faq.css';
-import '../../../assets/css/web-development.css';
-
 export const metadata = {
   title: 'Web Development Services',
   description: 'Professional web development services with modern UI/UX design, responsive layouts, and cutting-edge technologies.',

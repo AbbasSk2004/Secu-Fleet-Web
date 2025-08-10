@@ -1,24 +1,27 @@
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ContactBanner from '@/components/contact/ContactBanner';
-import ContactInfo from '@/components/contact/ContactInfo';
-import WorldwideOffices from '@/components/contact/WorldwideOffices';
+import ContactForm from '@/components/contact/ContactForm';
+import OfficeLocations from '@/components/contact/OfficeLocations';
+import RequestDemo from '@/components/contact/RequestDemo';
 import FAQ from '@/components/contact/FAQ';
+
+// Import only global CSS files
 import '@/assets/css/contact.css';
-import '@/assets/css/faq.css';
 import '@/assets/css/animation.css';
 
 export const metadata = {
-  title: 'Contact Us | SecuFleet',
-  description: 'Get in touch with SecuFleet for fleet management solutions.',
+  title: 'Contact Us | SecuFleet - Professional Fleet Management Solutions',
+  description: 'Get in touch with SecuFleet for comprehensive fleet management solutions. Request a demo, get a quote, or contact our global support team.',
 };
 
 export default function ContactPage() {
   return (
     <Layout>
       <ContactBanner />
-      <ContactInfo />
-      <WorldwideOffices />
+      <OfficeLocations />
+      <RequestDemo />
+      <ContactForm />
       <FAQ />
     </Layout>
   );

@@ -18,6 +18,7 @@ import Blogs from '../components/home/Blogs';
 import '../assets/css/index.css';
 import '../assets/css/animation.css';
 import '../assets/css/style.css';
+import '../assets/css/home/quote-section.css';
 
 const Home = () => {
   return (

@@ -1,0 +1,465 @@
+/* Feature Group Mining Control Component Styles - Home Page UI Match */
+
+/* Main Section Styles */
+.mining-control-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #0b1a2e;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Background Image with Enhanced Mining Theme */
+.mining-control-section .mining-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background-image: url('/images/mining-map-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Enhanced Fallback CSS Animated Background with Mining Theme */
+.mining-control-section .mining-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, #0b1a2e 0%, #1a2942 50%, #2a3a52 100%),
+    radial-gradient(circle at 20% 20%, rgba(6, 163, 218, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(52, 173, 84, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 70%);
+  animation: miningBackgroundShift 20s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+/* Mining Equipment Particle Effects */
+.mining-control-section .mining-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 165, 0, 0.6), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(6, 163, 218, 0.4), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(52, 173, 84, 0.5), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 165, 0, 0.3), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(6, 163, 218, 0.4), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: miningParticles 15s linear infinite;
+  z-index: -1;
+}
+
+@keyframes miningBackgroundShift {
+  0% {
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 0%;
+    filter: hue-rotate(5deg);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: hue-rotate(0deg);
+  }
+  75% {
+    background-position: 0% 100%;
+    filter: hue-rotate(-5deg);
+  }
+  100% {
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes miningParticles {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Section Title Styles */
+.mining-control-section .section-title {
+  position: relative;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.mining-control-section .section-title::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #06A3DA, transparent);
+  border-radius: 2px;
+  animation: titleBarGlow 3s ease-in-out infinite alternate;
+}
+
+.mining-control-section .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #34AD54, transparent);
+  border-radius: 1px;
+  animation: titleBarGlow 3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes titleBarGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(6, 163, 218, 0.3);
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(6, 163, 218, 0.8);
+    opacity: 1;
+  }
+}
+
+.mining-control-section .section-title h5 {
+  color: #06A3DA !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.mining-control-section .section-title h1 {
+  color: white !important;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  animation: titleFloat 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(6, 163, 218, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(6, 163, 218, 0.8);
+  }
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Feature Card Styles - Home Page Match */
+.mining-control-section .mining-feature-card {
+  background: rgba(9, 30, 62, 0.8);
+  border: 1px solid rgba(6, 163, 218, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+}
+
+/* Row spacing for better vertical gaps */
+.mining-control-section .row {
+  --bs-gutter-y: 3rem;
+}
+
+.mining-control-section .row > * {
+  margin-bottom: 2rem;
+}
+
+.mining-control-section .mining-feature-card:nth-child(odd) {
+  border-color: rgba(6, 163, 218, 0.3);
+}
+
+.mining-control-section .mining-feature-card:nth-child(even) {
+  border-color: rgba(52, 173, 84, 0.3);
+}
+
+.mining-control-section .mining-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 163, 218, 0.1), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.mining-control-section .mining-feature-card:hover::before {
+  left: 100%;
+}
+
+.mining-control-section .mining-feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(6, 163, 218, 0.6);
+  box-shadow: 0 15px 40px rgba(6, 163, 218, 0.2);
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Feature Icon Styles */
+.mining-control-section .mining-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.mining-control-section .mining-feature-card:hover .mining-feature-icon {
+  transform: scale(1.1) rotate(5deg);
+  animation: iconPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+}
+
+/* Feature Title Styles */
+.mining-control-section .mining-feature-title {
+  color: #06A3DA;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.mining-control-section .mining-feature-card:hover .mining-feature-title {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(6, 163, 218, 0.5);
+}
+
+/* Feature Description Styles */
+.mining-control-section .mining-feature-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.mining-control-section .mining-feature-card:hover .mining-feature-description {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Feature Stats and Badge Styles */
+.mining-control-section .mining-feature-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.mining-control-section .mining-feature-stat {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.mining-control-section .mining-feature-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.mining-control-section .mining-feature-badge.badge-success {
+  background: linear-gradient(135deg, #34AD54, #28a745);
+  color: white;
+  box-shadow: 0 4px 15px rgba(52, 173, 84, 0.3);
+}
+
+.mining-control-section .mining-feature-badge.badge-warning {
+  background: linear-gradient(135deg, #ffc107, #ff8c00);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.mining-control-section .mining-feature-badge.badge-danger {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.mining-control-section .mining-feature-card:hover .mining-feature-badge {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer Note Styles */
+.mining-control-section .mining-footer-note {
+  text-align: center;
+  margin-top: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation Classes */
+.mining-control-section .wow.zoomIn {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.mining-control-section .animate-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.mining-control-section .animate-fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mining-control-section {
+    padding: 3rem 0;
+  }
+  
+  .mining-control-section .section-title h1 {
+    font-size: 2rem;
+  }
+  
+  .mining-control-section .mining-feature-card {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .mining-control-section .mining-feature-icon {
+    font-size: 2.5rem;
+  }
+  
+  .mining-control-section .mining-feature-title {
+    font-size: 1.1rem;
+  }
+  
+  .mining-control-section .mining-feature-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mining-control-section .section-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .mining-control-section .mining-feature-icon {
+    font-size: 2rem;
+  }
+  
+  .mining-control-section .mining-feature-title {
+    font-size: 1rem;
+  }
+  
+  .mining-control-section .mining-feature-description {
+    font-size: 0.85rem;
+  }
+  
+  .mining-control-section .mining-feature-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Utility Classes */
+.mining-control-section .text-primary {
+  color: #06A3DA !important;
+}
+
+.mining-control-section .text-secondary {
+  color: #34AD54 !important;
+}
+
+.mining-control-section .fw-bold {
+  font-weight: 700 !important;
+}
+
+.mining-control-section .fw-800 {
+  font-weight: 800 !important;
+}
+
+.mining-control-section .container {
+  position: relative;
+  z-index: 2;
+} 

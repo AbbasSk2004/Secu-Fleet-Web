@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import '../../../assets/css/faq.css';
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);

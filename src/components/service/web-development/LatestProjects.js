@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import ProjectGallery from './ProjectGallery';
 import ProjectFilters from './ProjectFilters';
+import '../../../assets/css/Web.css';
 
 const LatestProjects = () => {
   const [activeFilter, setActiveFilter] = useState('*');

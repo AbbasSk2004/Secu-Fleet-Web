@@ -1,24 +1,18 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 const Facts = () => {
-  const counterRefs = useRef([]);
-
   useEffect(() => {
-    // Wait for DOM to be ready and jQuery to be available
-    const timer = setTimeout(() => {
-      if (typeof window !== 'undefined' && window.jQuery && window.jQuery.fn.counterUp) {
-        // Initialize counter-up for all elements with data-toggle="counter-up"
-        window.jQuery('[data-toggle="counter-up"]').counterUp({
-          delay: 10,
-          time: 2000
-        });
-      }
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    console.log('Facts component mounted - counter elements should be in DOM now');
+    
+    // Debug: Check if counter elements exist
+    const counterElements = document.querySelectorAll('[data-toggle="counter-up"]');
+    console.log('Facts component: Found', counterElements.length, 'counter elements');
+    
+    // If counters aren't working, provide a manual trigger
+    if (typeof window !== 'undefined' && window.reinitializeCounters) {
+      console.log('Manual counter reinitialization function is available');
+    }
   }, []);
 
   return (

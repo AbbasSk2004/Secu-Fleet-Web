@@ -49,25 +49,46 @@ const JobListingsContainer = ({ searchParams }) => {
   };
 
   if (isLoading) {
-    return <div className="text-center py-5">Loading job listings...</div>;
+    return (
+      <div className="job-listings-loading">
+        <div className="d-flex align-items-center justify-content-center">
+          <div className="spinner-border text-primary me-3" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          Loading job listings...
+        </div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="text-center py-5 text-danger">Error: {error}</div>;
+    return (
+      <div className="job-listings-error">
+        <div className="d-flex align-items-center justify-content-center">
+          <span className="material-symbols-outlined me-2">error</span>
+          Error: {error}
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="mt-4">
+    <div className="job-listings-container">
       {filteredListings.length > 0 ? (
-        <div className="row g-4">
+        <div className="job-listings-grid">
           {filteredListings.map(job => (
-            <div key={job._id} className="col-12">
+            <div key={job._id} className="job-listing-wrapper">
               <JobListing job={job} />
             </div>
           ))}
         </div>
       ) : (
-        <div className="text-center py-5">No job listings found matching your criteria.</div>
+        <div className="job-listings-empty">
+          <div className="d-flex align-items-center justify-content-center">
+            <span className="material-symbols-outlined me-2">search_off</span>
+            No job listings found matching your criteria.
+          </div>
+        </div>
       )}
     </div>
   );

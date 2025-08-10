@@ -3,45 +3,39 @@ import Link from 'next/link';
 
 const JobListing = ({ job }) => {
   return (
-    <div className="card shadow-sm mb-3">
-      <div className="card-body">
-        <div className="row align-items-center">
-          <div className="col-auto">
-            <span className="material-symbols-outlined bg-light p-3 rounded">
-              business_center
+    <div className="job-listing-card">
+      <div className="job-listing-content">
+        <div className="job-icon-container">
+          <span className="material-symbols-outlined job-icon">
+            business_center
+          </span>
+        </div>
+        
+        <div className="job-details">
+          <h3 className="job-title">{job.jobTitle}</h3>
+          <div className="job-badges">
+            <span className="job-badge">
+              {job.jobType}
+            </span>
+            <span className="job-badge">
+              {job.location}
             </span>
           </div>
-          
-          <div className="col">
-            <div className="d-flex align-items-center">
-              <div>
-                <h5 className="card-title mb-2">{job.jobTitle}</h5>
-                <div className="d-flex gap-2">
-                  <span className="badge bg-light text-dark">
-                    {job.jobType}
-                  </span>
-                  <span className="badge bg-light text-dark">
-                    {job.location}
-                  </span>
-                </div>
-              </div>
-            </div>
+        </div>
+        
+        <div className="job-salary-section">
+          <div className="salary-amount">
+            ${job.salary}
           </div>
-          
-          <div className="col-auto text-end">
-            <div className="h5 fw-bold text-dark mb-1">
-              ${job.salary}
-            </div>
-            <div className="text-muted mb-2">
-              /Year
-            </div>
-            <Link
-              href={`/jobs/${job._id}`}
-              className="btn btn-primary"
-            >
-              Apply Now
-            </Link>
+          <div className="salary-period">
+            /Year
           </div>
+          <Link
+            href={`/careers/jobs/${job._id}`}
+            className="apply-button"
+          >
+            Apply Now
+          </Link>
         </div>
       </div>
     </div>
