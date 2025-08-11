@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import FleetHero from '@/components/fleetmanagement/FleetHero';
-import FleetSchedule from '@/components/fleetmanagement/FleetSchedule';
-import OperationalControl from '@/components/fleetmanagement/OperationalControl';
-import SafetyCompliance from '@/components/fleetmanagement/SafetyCompliance';
-import EcoFleet from '@/components/fleetmanagement/EcoFleet';
-import RealTimeTracking from '@/components/fleetmanagement/RealTimeTracking';
+import FleetHero from '@/components/products/fleetmanagement/FleetHero';
+import FleetSchedule from '@/components/products/fleetmanagement/FleetSchedule';
+import OperationalControl from '@/components/products/fleetmanagement/OperationalControl';
+import SafetyCompliance from '@/components/products/fleetmanagement/SafetyCompliance';
+import EcoFleet from '@/components/products/fleetmanagement/EcoFleet';
+import RealTimeTracking from '@/components/products/fleetmanagement/RealTimeTracking';
 import '@/assets/css/products.css';
 import '@/assets/css/animation.css';
 
@@ -20,7 +20,7 @@ export default function FleetManagementPage() {
     <Layout>
       <div className="fleet-management-page" style={{ overflow: 'hidden' }}>
         <FleetHero />
-        <FleetSchedule />
+        
         <OperationalControl />
         <SafetyCompliance />
         <EcoFleet />

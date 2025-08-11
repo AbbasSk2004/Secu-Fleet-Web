@@ -1,6 +1,5 @@
 /* Fleet management */
 
-/*** Service ***/
 body{
     width: 100%;
     background-color: #091E3E !important;
@@ -9,171 +8,7 @@ body{
     color: white;
   }
 
-#section1 .container{
-    max-width: 100% !important;
-}
-.tab-content>.active {
-  min-height: 100vh;
-}
-.transBack{
-    background-color: rgba(39, 39, 39, 0.211);
-    border-radius: 10px;
-    color:white
-  }
-  .transBack .mb-3{
-    color: rgb(6, 163, 218) !important;
-  }
-  .text-center{
-    padding-bottom: 10px;
-  }
-  .mb-3{
-    padding-top: 10px;
-  }
-  .mb-4,#section1 .d-flex,#section2 .d-flex,#section3 .d-flex, #section4 .d-flex{
-    padding-top: 30px;
-  }
-  .navTitles{
-    color: black;
-   }
-
- @media (max-width:991px) {
-    img{
-      object-fit: contain;
-      border-radius: 10px;
-    }
-    #section1, #section3{
-        height: fit-content !important;
-
-    }   
-    #section1  .tab-content{
-        padding-top: 30px;
-      }
-      .transBack{
-        margin-top: 30px;
-      }
-
-  .schedule{
-    visibility: hidden;
-  }
-
- }
- #section1 .content, #section3 .content{
-  min-height: 100vh;
- }
- #section1 .row{
-  min-height: 100vh !important;
-  align-items: center;
-}
-
- @media (min-width:991px) {
-  
-#section1{
-  min-height: 100vh !important;
-}
-    .imageSize{
-      max-width: 70% !important;
-      max-height: 70%;
-    }
-  
-    .navTitles{
-      width: 20% !important;
-    }
-    #section1 .content, #section3 .content{
-      width: 80%;
-      min-height: 100vh;
-    }
-    #section1 .service{
-      height: 80%;
-      margin-top: 18%;
-    }
-  
-    #section1 .container, #section1 .row, #section1 .content, #section1 .tab-content
-    {
-      height: 100%;
-    }
-    #section3 .container, #section3 .row, #section3 .content, #section3 .tab-content
-    {
-      height: 100%;
-    }
-    .transback{
-      height: fit-content;
-      width: 28% !important;
-    }
-  }
-  @media (max-width: 768px) {
-    #section1,#section3{
-      background-attachment: scroll !important;
-    }
-
-}
- #section1 .nav-link p{
-    color: black !important;
-    font-weight: bolder;
-}
-#section3 .nav-link p{
-    color: black !important;
-    font-weight: bolder;
-}
-#section1 .nav-link p .active{
-    color: white !important;
-    font-weight: bolder;
-}
-#section3 .nav-link p .active{
-    color: white !important;
-    font-weight: bolder;
-}
- @media(min-width:992px){
-    #section1, #section3{
-        min-height: 110vh;
-    }
-  
-    #section1 .nav-link{
-        width:100% !important;
-        font-size: 15px;
-    }
-    #section1 .nav-link p{
-        color: black !important;
-        font-weight: bolder;
-    }
-    #section1 .nav-link.active p{
-        color: white !important;
-    }
- }
-
-
-  #section2{
-    background-color:#091E3E;
-    height: fit-content;
-  }
-    #section1 h1, #section1 h3,  #section1 p, #section3 h1,#section2 span, #section2 p, #section3 h3, #section4 span, #section4 p{
-    color: white;
-  }
-  #section1 h6, #section2 h1, #section2 h6, #section4 h1 , #section4 h6{
-    color: rgb(6, 163, 218);
-  }    
-  #section4{
-    background-color: #091E3E;
-  }
- 
-  .greenIcon{
-    width: 80px;
-    object-fit: contain;
-    padding-right: 10px;
-    margin-left: -15px;
-  }
-.service .nav .nav-link {
-    background: var(--light);
-    transition: .5s;
-}
-
-.service .nav .nav-link.active {
-    background: #091E3E;
-}
-
-.service .nav .nav-link.active h4 {
-    color: #FFFFFF !important;
-}
-
+/* General container styles - keeping for other sections */
 .container-xxl {
     margin-top: 0;
     padding-top: 0;
@@ -181,16 +16,35 @@ body{
     padding-bottom: 5rem;
 }
 
+/* General spacing utilities */
+.text-center{
+    padding-bottom: 10px;
+  }
+  .mb-3{
+    padding-top: 10px;
+  }
+  .mb-4,#section4 .d-flex{
+    padding-top: 30px;
+  }
+
+/* Section 4 styles */
+#section4{
+    background-color: #091E3E;
+  }
+  #section4 span, #section4 p{
+    color: white;
+  }
+  #section4 h1 , #section4 h6{
+    color: rgb(6, 163, 218);
+  }
+
 .btn:before{
 background-color: #091E3E;
 }
 
 .position-relative img {
     border-radius: 10px;
-    
 }
-
-
 
 .choice  {
     align-items: center;
@@ -497,35 +351,6 @@ background-color: #091E3E;
 @media (min-width:768px) {
   .workBack{
     height: 80vh;
-  }
-}
-
-#section1{
-  background: url('https://i.ibb.co/pZBk9XB/55.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  object-fit: cover;
-  padding: 0;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-#section3{
-  background: url('https://i.ibb.co/yFGdGqk/5.png');
-  background-size: cover;
-  background-position: center 55%;
-  background-repeat: no-repeat;
-  object-fit: contain;
-  height: 80vh;
-  background-attachment: fixed;
-}
-
-@media (max-width: 992px) {
-  #section3{
-    height: fit-content !important;
   }
 }
 

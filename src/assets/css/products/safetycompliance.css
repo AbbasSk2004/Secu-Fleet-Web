@@ -1,0 +1,211 @@
+/* Safety and Compliance Section Styles */
+
+/* Section 2 styles - Safety and Compliance */
+#section2{
+    background-color:#091E3E;
+    height: fit-content;
+    padding: 80px 0;
+}
+
+#section2 span, #section2 p{
+    color: white;
+}
+
+#section2 h1, #section2 h2, #section2 h5, #section2 h6{
+    color: rgb(6, 163, 218);
+}
+
+#section2 .text-primary {
+    color: rgb(6, 163, 218) !important;
+}
+
+/* Header section styling */
+#section2 .text-center h6 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+#section2 .text-center h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Content section styling */
+#section2 h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+#section2 h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(6, 163, 218);
+}
+
+#section2 p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Icon containers */
+#section2 .bg-light {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(6, 163, 218, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#section2 .bg-light:hover {
+    background: rgba(6, 163, 218, 0.1) !important;
+    border-color: rgb(6, 163, 218);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6, 163, 218, 0.2);
+}
+
+#section2 .bg-light i {
+    color: rgb(6, 163, 218);
+    transition: all 0.3s ease;
+}
+
+#section2 .bg-light:hover i {
+    transform: scale(1.1);
+}
+
+/* Feature items styling */
+#section2 .d-flex.align-items-start {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#section2 .d-flex.align-items-start:last-child {
+    border-bottom: none;
+}
+
+#section2 .d-flex.align-items-start:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+/* Button styling */
+#section2 .btn-primary {
+    background: linear-gradient(135deg, rgb(6, 163, 218) 0%, #0d8bb8 100%);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(6, 163, 218, 0.3);
+}
+
+#section2 .btn-primary:hover {
+    background: linear-gradient(135deg, #0d8bb8 0%, rgb(6, 163, 218) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(6, 163, 218, 0.4);
+}
+
+#section2 .btn-primary:before {
+    background-color: transparent;
+}
+
+/* Image styling */
+#section2 .position-relative img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#section2 .position-relative img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+#section2 .img-fluid {
+    object-fit: cover; 
+    height: 100% !important; 
+    border-radius: 15px;
+}
+
+/* Animation enhancements */
+#section2 .wow {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+#section2 .fadeIn {
+    animation-name: fadeIn;
+}
+
+#section2 .fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #section2 .text-center h1 {
+        font-size: 2rem;
+    }
+    
+    #section2 h2 {
+        font-size: 1.5rem;
+    }
+    
+    #section2 .bg-light {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #section2 .bg-light i {
+        font-size: 20px !important;
+    }
+}
+
+/* Container spacing */
+#section2 .container-xxl {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#section2 .row.g-5 {
+    align-items: center;
+}
