@@ -72,7 +72,7 @@ const Features = () => {
       
       <style jsx>{`
         .features-section {
-          background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+          background: linear-gradient(135deg, #0b1a2e 0%, #1a2f47 50%, #0b1a2e 100%);
           padding: 6rem 0;
           position: relative;
           overflow: hidden;
@@ -86,8 +86,9 @@ const Features = () => {
           right: 0;
           bottom: 0;
           background: 
-            radial-gradient(circle at 20% 30%, rgba(0, 123, 255, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(11, 26, 46, 0.02) 0%, transparent 50%);
+            radial-gradient(circle at 20% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
           pointer-events: none;
         }
         
@@ -96,25 +97,39 @@ const Features = () => {
           margin-bottom: 4rem;
           position: relative;
           z-index: 2;
+          color: white;
         }
         
         .section-title {
           font-size: 3.5rem;
           font-weight: 800;
-          background: linear-gradient(135deg, #0b1a2e, #007bff);
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, #ffffff, #e8e9ea);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          margin-bottom: 1rem;
           position: relative;
+        }
+        
+        .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 4px;
+          background: linear-gradient(90deg, #007bff, #00d4ff);
+          border-radius: 2px;
+          box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
         }
         
         .section-subtitle {
           font-size: 1.3rem;
-          color: #6c757d;
+          color: #c7c8ca;
           max-width: 700px;
           margin: 0 auto;
-          line-height: 1.6;
+          line-height: 1.7;
           font-weight: 300;
         }
         
@@ -135,14 +150,14 @@ const Features = () => {
         }
         
         .feature-card {
-          background: white;
+          background: rgba(255, 255, 255, 0.1);
           border-radius: 25px;
           padding: 3rem 2rem;
           text-align: center;
           height: 100%;
           position: relative;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-          border: 1px solid rgba(255, 255, 255, 0.8);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(10px);
           transition: all 0.4s ease;
           overflow: hidden;
@@ -155,7 +170,7 @@ const Features = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.7));
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
           z-index: 1;
           transition: opacity 0.3s ease;
         }
@@ -170,8 +185,9 @@ const Features = () => {
         }
         
         .feature-card:hover {
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-          border-color: rgba(0, 123, 255, 0.2);
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+          border-color: rgba(0, 123, 255, 0.5);
+          background: rgba(255, 255, 255, 0.15);
         }
         
         .icon-wrapper {
@@ -184,7 +200,7 @@ const Features = () => {
           justify-content: center;
           position: relative;
           transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          box-shadow: 0 15px 35px rgba(11, 26, 46, 0.15);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
         .feature-column.visible .icon-wrapper {
@@ -193,13 +209,13 @@ const Features = () => {
         
         .feature-column:hover .icon-wrapper {
           transform: scale(1.1) rotateY(180deg);
-          box-shadow: 0 20px 50px rgba(11, 26, 46, 0.2);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
         
         .feature-icon {
           font-size: 2.5rem;
           color: white;
-          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
         }
         
         .icon-bg-glow {
@@ -222,18 +238,18 @@ const Features = () => {
         .feature-title {
           font-size: 1.5rem;
           font-weight: 700;
-          color: #0b1a2e;
+          color: white;
           margin-bottom: 1.5rem;
           transition: all 0.3s ease;
         }
         
         .feature-column:hover .feature-title {
-          color: #007bff;
+          color: #00d4ff;
           transform: scale(1.05);
         }
         
         .feature-description {
-          color: #6c757d;
+          color: #c7c8ca;
           font-size: 1rem;
           line-height: 1.7;
           margin-bottom: 0;
@@ -241,49 +257,58 @@ const Features = () => {
         }
         
         .feature-column:hover .feature-description {
-          color: #495057;
+          color: #e8e9ea;
         }
         
-        .floating-particles {
+        .floating-shapes {
           position: absolute;
           width: 100%;
           height: 100%;
-          pointer-events: none;
           overflow: hidden;
+          pointer-events: none;
+          z-index: 1;
         }
         
-        .particle {
+        .shape {
           position: absolute;
-          width: 4px;
-          height: 4px;
-          background: rgba(0, 123, 255, 0.4);
+          background: rgba(0, 123, 255, 0.1);
           border-radius: 50%;
-          animation: float 8s linear infinite;
+          animation: floatShape 12s linear infinite;
         }
         
-        .particle:nth-child(1) {
+        .shape:nth-child(1) {
+          width: 60px;
+          height: 60px;
           left: 10%;
           animation-delay: -2s;
         }
         
-        .particle:nth-child(2) {
+        .shape:nth-child(2) {
+          width: 40px;
+          height: 40px;
           left: 30%;
-          animation-delay: -4s;
-        }
-        
-        .particle:nth-child(3) {
-          left: 50%;
           animation-delay: -6s;
         }
         
-        .particle:nth-child(4) {
-          left: 70%;
-          animation-delay: -1s;
+        .shape:nth-child(3) {
+          width: 80px;
+          height: 80px;
+          left: 50%;
+          animation-delay: -4s;
         }
         
-        .particle:nth-child(5) {
+        .shape:nth-child(4) {
+          width: 50px;
+          height: 50px;
+          left: 70%;
+          animation-delay: -8s;
+        }
+        
+        .shape:nth-child(5) {
+          width: 70px;
+          height: 70px;
           left: 90%;
-          animation-delay: -3s;
+          animation-delay: -1s;
         }
         
         @keyframes bounceIn {
@@ -304,19 +329,19 @@ const Features = () => {
           }
         }
         
-        @keyframes float {
+        @keyframes floatShape {
           0% {
-            transform: translateY(100vh) scale(0);
+            transform: translateY(100vh) rotate(0deg);
             opacity: 0;
           }
           10% {
-            opacity: 1;
+            opacity: 0.3;
           }
           90% {
-            opacity: 1;
+            opacity: 0.3;
           }
           100% {
-            transform: translateY(-100px) scale(1);
+            transform: translateY(-100px) rotate(360deg);
             opacity: 0;
           }
         }
@@ -339,18 +364,22 @@ const Features = () => {
         
         .stat-item {
           text-align: center;
+          color: white;
         }
         
         .stat-number {
           font-size: 2.5rem;
           font-weight: 800;
-          color: #007bff;
           display: block;
+          background: linear-gradient(135deg, #007bff, #00d4ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         
         .stat-label {
           font-size: 0.9rem;
-          color: #6c757d;
+          color: #9ca3af;
           text-transform: uppercase;
           letter-spacing: 0.5px;
         }
@@ -412,13 +441,13 @@ const Features = () => {
       `}</style>
 
       <section className="features-section" ref={sectionRef}>
-        {/* Floating particles background */}
-        <div className="floating-particles">
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
+        {/* Floating shapes background */}
+        <div className="floating-shapes">
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
         </div>
 
         <div className="container">

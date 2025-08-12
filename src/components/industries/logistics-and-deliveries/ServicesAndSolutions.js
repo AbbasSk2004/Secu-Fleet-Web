@@ -92,7 +92,7 @@ const ServicesAndSolutions = () => {
       <style jsx>{`
         .services-section {
           padding: 6rem 0;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          background: linear-gradient(135deg, #0b1a2e 0%, #1a2f47 50%, #0b1a2e 100%);
           position: relative;
           overflow: hidden;
         }
@@ -105,8 +105,9 @@ const ServicesAndSolutions = () => {
           right: 0;
           bottom: 0;
           background: 
-            radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 90% 80%, rgba(11, 26, 46, 0.03) 0%, transparent 50%);
+            radial-gradient(circle at 20% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
           pointer-events: none;
         }
         
@@ -115,39 +116,45 @@ const ServicesAndSolutions = () => {
           margin-bottom: 4rem;
           position: relative;
           z-index: 2;
+          color: white;
         }
         
         .section-title {
-          font-size: 3rem;
-          font-weight: 700;
-          color: #0b1a2e;
+          font-size: 3.5rem;
+          font-weight: 800;
           margin-bottom: 1rem;
+          background: linear-gradient(135deg, #ffffff, #e8e9ea);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           position: relative;
         }
         
         .section-title::after {
           content: '';
           position: absolute;
-          bottom: -10px;
+          bottom: -15px;
           left: 50%;
           transform: translateX(-50%);
-          width: 60px;
+          width: 80px;
           height: 4px;
-          background: linear-gradient(90deg, #007bff, #0056b3);
+          background: linear-gradient(90deg, #007bff, #00d4ff);
           border-radius: 2px;
+          box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
         }
         
         .section-subtitle {
-          font-size: 1.2rem;
-          color: #6c757d;
-          max-width: 600px;
+          font-size: 1.3rem;
+          color: #c7c8ca;
+          max-width: 700px;
           margin: 0 auto;
-          line-height: 1.6;
+          line-height: 1.7;
+          font-weight: 300;
         }
         
         .service-card {
-          background: white;
-          border: 2px solid #0b1a2e;
+          background: rgba(255, 255, 255, 0.1);
+          border: 2px solid rgba(255, 255, 255, 0.2);
           border-radius: 20px;
           overflow: hidden;
           position: relative;
@@ -155,19 +162,22 @@ const ServicesAndSolutions = () => {
           height: 100%;
           opacity: ${isVisible ? '1' : '0'};
           transform: ${isVisible ? 'translateY(0)' : 'translateY(60px)'};
+          backdrop-filter: blur(10px);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
         
         .service-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(11, 26, 46, 0.15);
-          border-color: #007bff;
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+          border-color: rgba(0, 123, 255, 0.5);
+          background: rgba(255, 255, 255, 0.15);
         }
         
         .card-image-wrapper {
           position: relative;
           height: 200px;
           overflow: hidden;
-          background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+          background: linear-gradient(135deg, rgba(11, 26, 46, 0.8), rgba(26, 47, 71, 0.6));
         }
         
         .card-image {
@@ -175,10 +185,14 @@ const ServicesAndSolutions = () => {
           height: 100%;
           object-fit: cover;
           transition: transform 0.4s ease;
+          opacity: 0.8;
+          filter: brightness(0.7);
         }
         
         .service-card:hover .card-image {
           transform: scale(1.05);
+          opacity: 0.9;
+          filter: brightness(0.8);
         }
         
         .service-badge {
@@ -194,27 +208,40 @@ const ServicesAndSolutions = () => {
           font-size: 1.3rem;
           color: white;
           font-weight: bold;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
           z-index: 10;
+          border: 2px solid rgba(255, 255, 255, 0.3);
         }
         
         .card-content {
           padding: 2rem;
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(5px);
         }
         
         .card-title {
           font-size: 1.4rem;
           font-weight: 700;
-          color: #0b1a2e;
+          color: white;
           margin-bottom: 1rem;
           line-height: 1.3;
+          transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .card-title {
+          color: #00d4ff;
         }
         
         .card-description {
-          color: #6c757d;
+          color: #c7c8ca;
           font-size: 1rem;
           line-height: 1.6;
           margin-bottom: 0;
+          transition: color 0.3s ease;
+        }
+        
+        .service-card:hover .card-description {
+          color: #e8e9ea;
         }
         
         .card-overlay {
@@ -223,7 +250,7 @@ const ServicesAndSolutions = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(0, 123, 255, 0.9), rgba(11, 26, 46, 0.8));
+          background: linear-gradient(135deg, rgba(0, 123, 255, 0.9), rgba(11, 26, 46, 0.9));
           opacity: 0;
           transition: opacity 0.3s ease;
           display: flex;
@@ -249,7 +276,7 @@ const ServicesAndSolutions = () => {
         .service-card:nth-child(6) { transition-delay: 0.35s; }
         .service-card:nth-child(7) { transition-delay: 0.4s; }
         
-        .floating-elements {
+        .floating-shapes {
           position: absolute;
           width: 100%;
           height: 100%;
@@ -257,37 +284,63 @@ const ServicesAndSolutions = () => {
           z-index: 1;
         }
         
-        .floating-dot {
+        .shape {
           position: absolute;
-          width: 8px;
-          height: 8px;
-          background: #007bff;
+          background: rgba(0, 123, 255, 0.1);
           border-radius: 50%;
-          opacity: 0.3;
-          animation: float 4s ease-in-out infinite;
+          animation: floatShape 12s linear infinite;
         }
         
-        .floating-dot:nth-child(1) {
-          top: 20%;
+        .shape:nth-child(1) {
+          width: 60px;
+          height: 60px;
           left: 10%;
-          animation-delay: -1s;
-        }
-        
-        .floating-dot:nth-child(2) {
-          top: 60%;
-          right: 15%;
           animation-delay: -2s;
         }
         
-        .floating-dot:nth-child(3) {
-          bottom: 30%;
-          left: 20%;
-          animation-delay: -3s;
+        .shape:nth-child(2) {
+          width: 40px;
+          height: 40px;
+          left: 30%;
+          animation-delay: -6s;
         }
         
-        @keyframes float {
-          0%, 100% { transform: translateY(0); opacity: 0.3; }
-          50% { transform: translateY(-15px); opacity: 0.8; }
+        .shape:nth-child(3) {
+          width: 80px;
+          height: 80px;
+          left: 50%;
+          animation-delay: -4s;
+        }
+        
+        .shape:nth-child(4) {
+          width: 50px;
+          height: 50px;
+          left: 70%;
+          animation-delay: -8s;
+        }
+        
+        .shape:nth-child(5) {
+          width: 70px;
+          height: 70px;
+          left: 90%;
+          animation-delay: -1s;
+        }
+        
+        @keyframes floatShape {
+          0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.3;
+          }
+          90% {
+            opacity: 0.3;
+          }
+          100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+          }
         }
         
         @media (max-width: 768px) {
@@ -336,11 +389,13 @@ const ServicesAndSolutions = () => {
       `}</style>
 
       <section className="services-section" ref={sectionRef}>
-        {/* Floating background elements */}
-        <div className="floating-elements">
-          <div className="floating-dot"></div>
-          <div className="floating-dot"></div>
-          <div className="floating-dot"></div>
+        {/* Floating background shapes */}
+        <div className="floating-shapes">
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
         </div>
 
         <div className="container">

@@ -138,29 +138,46 @@ const DetailedService = () => {
       
       <style jsx>{`
         .detailed-services-section {
-          background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+          background: linear-gradient(135deg, #0b1a2e 0%, #1a2f47 50%, #0b1a2e 100%);
           position: relative;
           overflow: hidden;
+        }
+        
+        .detailed-services-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+            radial-gradient(circle at 20% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+          pointer-events: none;
         }
         
         .service-section {
           padding: 4rem 0;
           position: relative;
+          z-index: 2;
         }
         
         .service-section:nth-child(even) {
-          background: linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%);
+          background: linear-gradient(135deg, rgba(26, 47, 71, 0.3) 0%, rgba(11, 26, 46, 0.2) 100%);
         }
         
         .service-content {
-          background: linear-gradient(135deg, #0b1a2e 0%, #1a2f47 100%);
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 20px;
           padding: 3rem;
           color: white;
           height: 100%;
           position: relative;
           overflow: hidden;
-          box-shadow: 0 15px 35px rgba(11, 26, 46, 0.2);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(10px);
         }
         
         .service-content::before {
@@ -171,8 +188,8 @@ const DetailedService = () => {
           right: 0;
           bottom: 0;
           background: 
-            radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 90% 80%, rgba(0, 123, 255, 0.05) 0%, transparent 50%);
+            radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 90% 80%, rgba(0, 123, 255, 0.1) 0%, transparent 50%);
           pointer-events: none;
         }
         
@@ -183,18 +200,21 @@ const DetailedService = () => {
         
         .service-image {
           border-radius: 20px;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
           width: 100%;
           height: 400px;
           object-fit: cover;
           transition: all 0.6s ease;
           opacity: 0;
           transform: translateX(-50px);
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          filter: brightness(0.8) contrast(1.1);
         }
         
         .service-image.visible {
           opacity: 1;
           transform: translateX(0);
+          filter: brightness(0.9) contrast(1.1);
         }
         
         .service-image.from-right {
@@ -205,15 +225,36 @@ const DetailedService = () => {
           transform: translateX(0);
         }
         
+        .service-image:hover {
+          filter: brightness(1) contrast(1.2);
+          box-shadow: 0 20px 50px rgba(0, 123, 255, 0.2);
+        }
+        
         .service-title {
           font-size: 2.5rem;
-          font-weight: 700;
-          color: white;
+          font-weight: 800;
+          background: linear-gradient(135deg, #ffffff, #e8e9ea);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           margin-bottom: 1.5rem;
           opacity: 0;
           transform: translateY(30px);
           transition: all 0.6s ease;
           transition-delay: 0.2s;
+          position: relative;
+        }
+        
+        .service-title::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 60px;
+          height: 3px;
+          background: linear-gradient(90deg, #007bff, #00d4ff);
+          border-radius: 2px;
+          box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
         }
         
         .service-title.visible {
@@ -224,7 +265,7 @@ const DetailedService = () => {
         .service-description {
           font-size: 1.1rem;
           line-height: 1.8;
-          color: #e8e9ea;
+          color: #c7c8ca;
           margin-bottom: 2rem;
           opacity: 0;
           transform: translateY(30px);
@@ -238,18 +279,19 @@ const DetailedService = () => {
         }
         
         .features-list {
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.08);
           border-radius: 15px;
           padding: 0;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(15px);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
         
         .list-group-item {
           background: transparent;
           border: none;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-          color: white;
+          color: #e8e9ea;
           padding: 1rem 1.5rem;
           font-size: 1rem;
           position: relative;
@@ -269,22 +311,80 @@ const DetailedService = () => {
         
         .list-group-item::before {
           content: '✓';
-          color: #007bff;
+          color: #00d4ff;
           font-weight: bold;
           font-size: 1.2rem;
           margin-right: 0.75rem;
+          text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
         }
         
         .list-group-item:hover {
-          background: rgba(0, 123, 255, 0.1);
-          transform: translateX(5px);
+          background: rgba(0, 123, 255, 0.15);
+          transform: translateX(8px);
+          color: white;
+          border-left: 3px solid #00d4ff;
         }
         
         .section-divider {
           height: 2px;
-          background: linear-gradient(90deg, transparent, #007bff, transparent);
+          background: linear-gradient(90deg, transparent, #007bff, #00d4ff, transparent);
           margin: 2rem 0;
-          opacity: 0.5;
+          opacity: 0.6;
+          box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+        
+        /* Floating shapes animation */
+        .floating-shapes {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+        }
+        
+        .shape {
+          position: absolute;
+          background: rgba(0, 123, 255, 0.08);
+          border-radius: 50%;
+          animation: floatShape 20s linear infinite;
+        }
+        
+        .shape:nth-child(1) {
+          width: 40px;
+          height: 40px;
+          left: 10%;
+          animation-delay: -2s;
+        }
+        
+        .shape:nth-child(2) {
+          width: 60px;
+          height: 60px;
+          left: 60%;
+          animation-delay: -8s;
+        }
+        
+        .shape:nth-child(3) {
+          width: 30px;
+          height: 30px;
+          left: 85%;
+          animation-delay: -12s;
+        }
+        
+        @keyframes floatShape {
+          0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+          }
         }
         
         @media (max-width: 768px) {
@@ -332,6 +432,13 @@ const DetailedService = () => {
       `}</style>
 
       <div className="detailed-services-section">
+        {/* Floating background shapes */}
+        <div className="floating-shapes">
+          <div className="shape"></div>
+          <div className="shape"></div>
+          <div className="shape"></div>
+        </div>
+
         {services.map((service, index) => {
           const isEven = index % 2 === 1
           const isVisible = visibleSections.has(index)
