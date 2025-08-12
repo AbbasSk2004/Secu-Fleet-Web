@@ -327,23 +327,23 @@ const Navbar = () => {
               <img src="/assets/images/icons/industries/construction.png" alt="construction icon" loading="lazy" />
               <p>Construction & Mining</p>
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/moto-and-quads" onClick={closeAll}>
               <img src="/assets/images/icons/industries/JadMoto.png" alt="atv icon" loading="lazy" />
               Moto, ATV & Quads
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/maritime-and-boats" onClick={closeAll}>
               <img src="/assets/images/icons/industries/boat.png" alt="boat icon" loading="lazy" />
               Maritime & boats
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/emergency-and-utilities" onClick={closeAll}>
               <img src="/assets/images/icons/industries/ambulance.png" alt="ambulance icon" loading="lazy" />
               Utility & Emergency
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/logistics-and-deliveries" onClick={closeAll}>
               <img src="/assets/images/icons/industries/logistic.png" alt="logistic icon" loading="lazy" />
               Logistics & Delivery services
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/rental-insurance-and-leasing" onClick={closeAll}>
               <img src="/assets/images/icons/industries/rent1.png" alt="rental icon" loading="lazy" />
               Rental, Insurance & Leasing
             </Link>
