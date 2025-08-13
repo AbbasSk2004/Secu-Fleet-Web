@@ -26,28 +26,44 @@ const BleFeaturs = () => {
 
   const accessories = [
     {
-      title: "EYE Sensors",
-      description: "Advanced multi-parameter monitoring",
-      features: ["Temperature monitoring", "Vibration detection", "Motion sensing", "Real-time alerts"]
+      title: "Motorcycle Tracking Solutions",
+      description: "Compact and robust tracking designed specifically for motorcycles",
+      features: ["IP67 waterproof casing for all weather conditions", "Large capacity internal battery with sleep mode", "Click-type casing with no tools required", "Up to 30 days battery life for parked vehicles"]
     },
     {
-      title: "BLE Beacons",
-      description: "Precision asset location tracking",
-      features: ["Indoor positioning", "Asset identification", "Proximity alerts", "Long battery life"]
+      title: "ATV & Recreational Vehicle Tracking",
+      description: "All-arounder water-resistant GPS tracker for off-road adventures",
+      features: ["Advanced helmet detection technology", "Panic button for emergency assistance", "Multi-functional digital outputs (LED, buzzers)", "FOTA remote firmware updates"]
     },
     {
-      title: "Gateway Units",
-      description: "Seamless cloud connectivity",
-      features: ["BLE to cloud bridge", "Data aggregation", "Offline storage", "Remote configuration"]
+      title: "E-Scooter Fleet Management",
+      description: "Optimized fleet operations for electric scooter sharing services",
+      features: ["Battery level monitoring and alerts", "User behavior analytics and data collection", "Multi-brand compatibility support", "Real-time maintenance requirement tracking"]
     }
   ];
 
-  const benefits = [
-    "Ultra-low power consumption for extended battery life",
-    "IP67 waterproof rating for harsh environments",
-    "Robust design built for mining and construction sites",
-    "Offline capability with automatic sync when connected",
-    "Easy installation with plug-and-play setup"
+  const motorcycleBenefits = [
+    "Designed specifically with motorcycles in mind with compact and robust casing",
+    "IP67-rated waterproof protection for challenging environments",
+    "Innovative click-type casing closing with no additional tools required",
+    "All-in-one solution for fleet operations, asset protection, and rider safety",
+    "High-capacity internal battery with unique sleep mode for 30-day operation"
+  ];
+
+  const atvBenefits = [
+    "Ultimate safety assurance with IP67-rated water-resistant and dustproof casing",
+    "Extended battery life with up to 30 days of uninterrupted use",
+    "Helmet detection technology to minimize accident risks",
+    "Multi-functional digital outputs for panic buttons and LED notifications",
+    "Remote emergency assistance with accurate location data for distressed adventurers",
+    "Seamless firmware updates using FOTA WEB tool for optimal performance"
+  ];
+
+  const escooterBenefits = [
+    "Optimized fleet management to track battery levels and maintenance requirements",
+    "Data analytics to monitor user behavior, speeding, and safety parameters",
+    "Expanded business opportunities with multi-brand e-scooter compatibility",
+    "Increased fleet reliability with IP67-rated water and dust resistance"
   ];
 
   return (
@@ -239,9 +255,18 @@ const BleFeaturs = () => {
           margin-bottom: 25px;
         }
         
+        .benefits-subtitle {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #4a9eff;
+          margin-bottom: 15px;
+          margin-top: 30px;
+        }
+        
         .benefits-list {
           list-style: none;
           padding: 0;
+          margin-bottom: 25px;
         }
         
         .benefits-list li {
@@ -258,6 +283,17 @@ const BleFeaturs = () => {
         .benefits-list li:hover {
           background: rgba(255, 255, 255, 0.1);
           transform: translateX(10px);
+        }
+        
+        .intro-text {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          padding: 25px;
+          margin-bottom: 30px;
+          color: #e8f4fd;
+          font-size: 1.1rem;
+          line-height: 1.6;
         }
         
         .cta-button {
@@ -343,14 +379,19 @@ const BleFeaturs = () => {
             {/* Text Content - Left Side */}
             <div className="col-lg-6 order-2 order-lg-1">
               <h2 className={`ble-title ${isVisible ? 'visible' : ''}`}>
-                Advanced BLE Accessories
+                Motorcycles, ATVs & Quads Tracking Solutions
               </h2>
               
               <p className={`ble-description ${isVisible ? 'visible' : ''}`}>
-                Enhance your fleet tracking capabilities with our comprehensive range of Bluetooth Low Energy accessories. 
-                Designed specifically for mining and construction environments, these rugged devices provide critical 
-                monitoring data while maintaining ultra-low power consumption and reliable connectivity.
+                Motorsports are popular events all over the world, with millions of motorcycles, ATVs, and e-scooters 
+                requiring advanced tracking solutions. SecuFleet provides comprehensive protection, safety, and fleet 
+                management solutions for over 200 million motorcycles globally and the growing recreational vehicle market.
               </p>
+              
+              <div className={`intro-text ${isVisible ? 'visible' : ''}`}>
+                Track and monitor motorcycles, ATVs, and e-scooters with relevant data tracking to ensure accuracy, 
+                timely technical assistance, proper safety measures, and protection against theft-related crimes and safety challenges.
+              </div>
               
               <div className={`accessories-grid ${isVisible ? 'visible' : ''}`}>
                 {accessories.map((accessory, index) => (
@@ -367,16 +408,32 @@ const BleFeaturs = () => {
               </div>
               
               <div className={`benefits-section ${isVisible ? 'visible' : ''}`}>
-                <h3 className="benefits-title">Key Benefits</h3>
+                <h3 className="benefits-title">Comprehensive Tracking Benefits</h3>
+                
+                <h4 className="benefits-subtitle">Motorcycle Tracking & Protection</h4>
                 <ul className="benefits-list">
-                  {benefits.map((benefit, index) => (
+                  {motorcycleBenefits.map((benefit, index) => (
+                    <li key={index}>{benefit}</li>
+                  ))}
+                </ul>
+                
+                <h4 className="benefits-subtitle">ATV & Recreational Vehicle Safety</h4>
+                <ul className="benefits-list">
+                  {atvBenefits.map((benefit, index) => (
+                    <li key={index}>{benefit}</li>
+                  ))}
+                </ul>
+                
+                <h4 className="benefits-subtitle">E-Scooter Fleet Management</h4>
+                <ul className="benefits-list">
+                  {escooterBenefits.map((benefit, index) => (
                     <li key={index}>{benefit}</li>
                   ))}
                 </ul>
               </div>
               
               <button className={`btn cta-button ${isVisible ? 'visible' : ''}`}>
-                Learn More About BLE Accessories
+                Explore All Tracking Solutions
               </button>
             </div>
             
@@ -384,7 +441,7 @@ const BleFeaturs = () => {
             <div className="col-lg-6 order-1 order-lg-2">
               <div className={`image-container ${isVisible ? 'visible' : ''}`}>
                 <div className="feature-image">
-                  <div className="image-icon">📡</div>
+                  <div className="image-icon">🏍️</div>
                 </div>
               </div>
             </div>

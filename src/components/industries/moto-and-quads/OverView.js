@@ -33,30 +33,30 @@ const OverView = () => {
   const services = [
     {
       id: 1,
-      title: "Fleet Tracking Solutions",
-      description: "Real-time GPS tracking and monitoring for your entire fleet. Track location, speed, and vehicle status with comprehensive reporting and analytics.",
-      icon: "🚚",
+      title: "Motorcycle Tracking & Protection",
+      description: "Comprehensive GPS tracking designed specifically for motorcycles with compact, robust casing, IP67 water resistance, and extended 30-day battery life with unique sleep mode.",
+      icon: "🏍️",
       color: "#007bff"
     },
     {
       id: 2,
-      title: "BLE Accessories",
-      description: "Bluetooth Low Energy sensors and accessories for enhanced monitoring. Temperature, fuel, door sensors, and custom IoT integrations.",
-      icon: "📡",
+      title: "ATV & Quad Safety Solutions",
+      description: "Ultimate safety assurance for off-road adventures with helmet detection technology, panic button emergency assistance, and multi-functional digital outputs for enhanced user experience.",
+      icon: "🏁",
       color: "#28a745"
     },
     {
       id: 3,
-      title: "Mining Fleet Control",
-      description: "Specialized solutions for heavy mining equipment. Monitor excavators, dump trucks, and machinery in remote locations with offline capabilities.",
-      icon: "⛏️",
+      title: "E-Scooter Fleet Management",
+      description: "Optimized fleet operations for electric scooter sharing services with real-time battery monitoring, maintenance tracking, and data analytics for improved customer experience.",
+      icon: "🛴",
       color: "#ffc107"
     },
     {
       id: 4,
-      title: "Construction Site Monitoring",
-      description: "Complete visibility over construction vehicles and equipment. Geofencing, theft protection, and operational efficiency optimization.",
-      icon: "🏗️",
+      title: "Motorsports Event Tracking",
+      description: "Professional tracking solutions for motorsports competitions ensuring accurate race results, timely technical assistance, and proper safety measures for riders and spectators.",
+      icon: "🏆",
       color: "#dc3545"
     }
   ];
@@ -414,8 +414,8 @@ const OverView = () => {
               Our Services
             </h2>
             <p className={`section-intro ${isVisible ? 'visible' : ''}`}>
-              Track moto and quad units in real time, monitor rider behavior, and protect assets with
-              geofencing and alerts. Comprehensive solutions ideal for tours, rentals, and sport fleets.
+              Track motorcycles, ATVs, and quads in real time, monitor rider behavior, and protect assets with
+              comprehensive tracking solutions. Specialized systems for motorsports, rentals, and recreational vehicle fleets.
             </p>
           </div>
           

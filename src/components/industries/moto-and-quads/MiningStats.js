@@ -12,10 +12,10 @@ const MiningStats = () => {
   const sectionRef = useRef(null);
 
   const targetValues = {
-    coverage: 98,
+    coverage: 200,
     responseTime: 30,
-    efficiency: 35,
-    fleets: 500
+    efficiency: 67,
+    fleets: 98
   };
 
   const animateCounter = (key, target, duration = 2000) => {
@@ -70,37 +70,37 @@ const MiningStats = () => {
     {
       id: 'coverage',
       value: counters.coverage,
-      suffix: '%',
-      label: 'Coverage',
-      description: 'Real-Time GPS + Offline Sync',
-      icon: '📍',
+      suffix: 'M+',
+      label: 'Motorcycles Worldwide',
+      description: 'Including Mopeds & E-Scooters',
+      icon: '🏍️',
       color: '#4a9eff'
     },
     {
       id: 'responseTime',
       value: counters.responseTime,
-      suffix: 's',
-      label: 'Alert Response',
-      description: 'Smart Geofencing Alerts',
-      icon: '⚡',
+      suffix: ' Days',
+      label: 'Battery Life',
+      description: 'With Unique Sleep Mode',
+      icon: '🔋',
       color: '#2c5282'
     },
     {
       id: 'efficiency',
       value: counters.efficiency,
-      suffix: '%',
-      label: 'Efficiency Gains',
-      description: 'Productivity Insights',
-      icon: '📈',
+      suffix: '',
+      label: 'IP67 Protection',
+      description: 'Water & Dust Resistant',
+      icon: '🛡️',
       color: '#4a9eff'
     },
     {
       id: 'fleets',
       value: counters.fleets,
-      suffix: '+',
-      label: 'Fleets Managed',
-      description: 'Engine Health Monitoring',
-      icon: '🚚',
+      suffix: '%',
+      label: 'Safety Reliability',
+      description: 'Helmet Detection & Alerts',
+      icon: '⚡',
       color: '#2c5282'
     }
   ];
@@ -317,6 +317,30 @@ const MiningStats = () => {
           line-height: 1.5;
         }
         
+        .intro-section {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          padding: 30px;
+          margin-bottom: 60px;
+          text-align: center;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.8s ease-out 0.3s;
+        }
+        
+        .intro-section.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .intro-text {
+          color: #e8f4fd;
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 0;
+        }
+        
         @media (max-width: 768px) {
           .stats-section {
             padding: 60px 0;
@@ -370,11 +394,19 @@ const MiningStats = () => {
         <div className="container section-content">
           <div className="stats-header">
             <h2 className={`stats-title ${isVisible ? 'visible' : ''}`}>
-              Trusted Performance
+              Motorcycles, ATVs & Quads by the Numbers
             </h2>
             <p className={`stats-subtitle ${isVisible ? 'visible' : ''}`}>
-              Proven results across mining and construction operations worldwide. 
-              Our advanced fleet tracking solutions deliver measurable improvements in safety, efficiency, and operational control.
+              Proven tracking solutions for the world's most popular motorsports vehicles. 
+              SecuFleet delivers reliable protection, safety, and fleet management across all terrains and weather conditions.
+            </p>
+          </div>
+          
+          <div className={`intro-section ${isVisible ? 'visible' : ''}`}>
+            <p className="intro-text">
+              Motorsports are popular events all over the world. With millions of motorcycles, ATVs, and e-scooters used daily, 
+              SecuFleet provides comprehensive tracking solutions to combat theft-related crimes, enhance safety measures, 
+              and ensure accurate data monitoring for recreational and commercial vehicle operations.
             </p>
           </div>
           
@@ -402,32 +434,56 @@ const MiningStats = () => {
           
           <div className="features-section">
             <h3 className={`features-title ${isVisible ? 'visible' : ''}`}>
-              Key Features & Capabilities
+              Advanced Tracking Features & Capabilities
             </h3>
             
             <div className="features-grid">
               <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '1.4s' }}>
-                <div className="feature-icon">🛰️</div>
-                <h4 className="feature-title">Real-Time GPS + Offline Sync</h4>
-                <p className="feature-desc">Continuous tracking with automatic data synchronization when connectivity is restored</p>
+                <div className="feature-icon">🏍️</div>
+                <h4 className="feature-title">Motorcycle-Specific Design</h4>
+                <p className="feature-desc">Compact, robust casing with click-type closing requiring no tools for installation</p>
               </div>
               
               <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '1.6s' }}>
-                <div className="feature-icon">🚨</div>
-                <h4 className="feature-title">Smart Geofencing Alerts</h4>
-                <p className="feature-desc">Instant notifications for unauthorized vehicle movement or zone violations</p>
+                <div className="feature-icon">🛡️</div>
+                <h4 className="feature-title">Ultimate Weather Protection</h4>
+                <p className="feature-desc">IP67-rated waterproof and dustproof casing for reliable operation in harsh conditions</p>
               </div>
               
               <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '1.8s' }}>
-                <div className="feature-icon">🔧</div>
-                <h4 className="feature-title">Engine Health Monitoring</h4>
-                <p className="feature-desc">Predictive maintenance alerts and comprehensive diagnostic reporting</p>
+                <div className="feature-icon">🪖</div>
+                <h4 className="feature-title">Helmet Detection Technology</h4>
+                <p className="feature-desc">Advanced safety monitoring to minimize accident risks and ensure rider protection</p>
               </div>
               
               <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '2s' }}>
+                <div className="feature-icon">🚨</div>
+                <h4 className="feature-title">Emergency Response System</h4>
+                <p className="feature-desc">Built-in panic button with immediate emergency service alerts and accurate location data</p>
+              </div>
+              
+              <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '2.2s' }}>
+                <div className="feature-icon">📱</div>
+                <h4 className="feature-title">Remote Updates & Configuration</h4>
+                <p className="feature-desc">FOTA WEB tool for seamless firmware updates ensuring optimal performance</p>
+              </div>
+              
+              <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '2.4s' }}>
                 <div className="feature-icon">📊</div>
-                <h4 className="feature-title">Productivity Insights</h4>
-                <p className="feature-desc">Advanced analytics and reporting for operational optimization</p>
+                <h4 className="feature-title">Fleet Analytics & Insights</h4>
+                <p className="feature-desc">Data collection on user behavior, maintenance needs, and operational optimization</p>
+              </div>
+              
+              <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '2.6s' }}>
+                <div className="feature-icon">🔄</div>
+                <h4 className="feature-title">Multi-Brand Compatibility</h4>
+                <p className="feature-desc">Versatile solutions supporting various e-scooter and vehicle manufacturer brands</p>
+              </div>
+              
+              <div className={`feature-item ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '2.8s' }}>
+                <div className="feature-icon">⚡</div>
+                <h4 className="feature-title">Multi-Functional Outputs</h4>
+                <p className="feature-desc">Digital outputs for panic buttons, LED notifications, and buzzer alerts</p>
               </div>
             </div>
           </div>

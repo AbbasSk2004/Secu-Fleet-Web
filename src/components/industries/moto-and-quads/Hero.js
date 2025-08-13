@@ -217,21 +217,22 @@ const Hero = () => {
             <div className="col-12 col-lg-10 text-center">
               <div className={`fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
                 <h1 className="hero-title">
-                  SecuFleet Telematics Solutions
+                Motorcycles, ATV’s & E-Scooter Tracking Solutions
                 </h1>
               </div>
               
               <div className={`fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.4s' }}>
                 <h2 className="hero-subtitle">
-                  Smart, Reliable Fleet Tracking for Construction & Mining
+                Smart, Reliable Protection and Fleet Management for Two & Four-Wheel Adventures
                 </h2>
               </div>
               
               <div className={`fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.6s' }}>
                 <p className="hero-tagline">
-                  Real-time GPS tracking • BLE accessories • Smart geofencing • Offline tracking
+                Compact waterproof trackers • Extended battery life • Rider safety features
+                Designed for motorcycles,
                   <br />
-                  Lightweight tracking and safety solutions for powersports fleets and heavy equipment rentals.
+                  ATVs, scooters, and mopeds to enhance safety, prevent theft, and optimize operations. equipment rentals.
                 </p>
               </div>
               

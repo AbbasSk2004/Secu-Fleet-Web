@@ -347,11 +347,11 @@ const Navbar = () => {
               <img src="/assets/images/icons/industries/rent1.png" alt="rental icon" loading="lazy" />
               Rental, Insurance & Leasing
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/agriculture-and-farming-iot" onClick={closeAll}>
               <img src="/assets/images/icons/industries/farming.png" alt="farming icon" loading="lazy" />
               Agriculture & Farming IOT
             </Link>
-            <Link href="/coming-soon" onClick={closeAll}>
+            <Link href="/industries/assets-and-workforce" onClick={closeAll}>
               <img src="/assets/images/icons/industries/workforce.png" alt="workforce icon" loading="lazy" />
               Assets & Workforce
             </Link>
