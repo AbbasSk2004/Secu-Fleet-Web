@@ -31,10 +31,6 @@ body{
 background-color: #091E3E;
 }
 
-.position-relative img {
-    border-radius: 10px;
-}
-
 .choice  {
     align-items: center;
 }
@@ -44,20 +40,8 @@ background-color: #091E3E;
     border-radius: 50%;
 }
 
-.fw-bold {
-    font-weight: bold;
-}
-
-.ps-3 {
-    padding-left: 1rem !important;
-}
-
 .col-12 .choice  {
     margin-bottom: 1.5rem;
-}
-
-.bg-light span {
-    color: #6c757d;
 }
 
 /* Bullet Points */
@@ -67,35 +51,17 @@ background-color: #091E3E;
     justify-content: center;
 }
 
-.bg-light {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-}
-
-.ps-3 {
-    padding-left: 15px;
-}
-
 .choice  h6 {
     margin-bottom: 0;
 }
 
-.d-flex span {
-    color: #6c757d;
-}
-
-/* Animation for Numbers */
-.bg-light {
+/* Animation for Numbers - keeping for other components */
+.choice .bg-light {
     position: relative;
     overflow: hidden;
 }
 
-.bg-light span {
+.choice .bg-light span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -103,15 +69,8 @@ background-color: #091E3E;
     transition: transform 0.3s ease;
 }
 
-.bg-light:hover span {
+.choice .bg-light:hover span {
     transform: translate(-50%, -50%) rotate(360deg);
-}
-
-/* Ensure images cover the container */
-.img-fluid {
-    object-fit: contain; 
-    height: 100% !important; 
-    border-radius: 10px;
 }
 
 .schedule {

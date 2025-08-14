@@ -1,0 +1,36 @@
+/* Route Planning Hero Component Styles */
+
+.routeBack {
+  background: url('https://i.ibb.co/3BzCpB1/route-Back.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  animation: bounce-in-right 0.8s ease-in-out both;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .routeBack {
+    height: 60vh;
+  }
+}
+
+/* Animation keyframes for bounce-in-right effect */
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 

@@ -1,0 +1,131 @@
+/* Route Planning Intelligent Section Styles */
+
+#section4 {
+    background-color: #091E3E;
+    color: #fff;
+}
+
+#section4 h1, #section4 h2, #section4 h5, #section4 h6 {
+    color: #091E3E;
+    font-weight: 600;
+}
+
+/* Make the main title white */
+#section4 .section-title {
+    color: #fff !important;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Add animated underline like other sections */
+#section4 .section-title::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    background: #06A3DA;
+    border-radius: 2px;
+}
+
+#section4 .section-title::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 5px;
+    bottom: 0;
+    background: #FFFFFF;
+    animation: section-title-run 5s infinite linear;
+}
+
+@keyframes section-title-run {
+    0% {left: 0; } 
+    50% { left : 145px; } 
+    100% { left: 0; }
+}
+
+#section4 span, #section4 p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+#section4 .container-xxl {
+    margin-top: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#section4 .position-relative video {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#section4 .img-fluid {
+    object-fit: cover; 
+    height: 100% !important; 
+    border-radius: 10px;
+}
+
+#section4 .bg-light {
+    background-color: #f8f9fa !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    overflow: hidden;
+}
+
+#section4 .bg-light span {
+    color: #6c757d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+#section4 .bg-light:hover span {
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+
+#section4 .fw-bold {
+    font-weight: bold;
+}
+
+#section4 .ps-3 {
+    padding-left: 1rem !important;
+}
+
+#section4 .d-flex span {
+    color: #6c757d;
+}
+
+#section4 h6 {
+    margin-bottom: 0;
+    color: #091E3E;
+    font-weight: 600;
+}
+
+/* Video specific styles */
+#section4 video {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    #section4 .col-lg-6.pt-4 {
+        min-height: 300px;
+    }
+    
+    #section4 .container-xxl {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+} 

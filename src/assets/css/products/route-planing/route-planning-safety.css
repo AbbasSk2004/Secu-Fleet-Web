@@ -1,0 +1,126 @@
+/* Route Planning Safety Section Styles */
+
+#section2 {
+    background-color: #091E3E;
+    color: #fff;
+}
+
+#section2 h1, #section2 h2, #section2 h5, #section2 h6 {
+    color: #091E3E;
+    font-weight: 600;
+}
+
+/* Make the main title white */
+#section2 .section-title {
+    color: #fff !important;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Add animated underline like other sections */
+#section2 .section-title::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    background: #06A3DA;
+    border-radius: 2px;
+}
+
+#section2 .section-title::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 5px;
+    bottom: 0;
+    background: #FFFFFF;
+    animation: section-title-run 5s infinite linear;
+}
+
+@keyframes section-title-run {
+    0% {left: 0; } 
+    50% { left : 145px; } 
+    100% { left: 0; }
+}
+
+#section2 span, #section2 p {
+    color: #fff;
+    line-height: 1.6;
+}
+
+#section2 .container-xxl {
+    margin-top: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#section2 .position-relative img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#section2 .img-fluid {
+    object-fit: cover; 
+    height: 100% !important; 
+    border-radius: 10px;
+}
+
+#section2 .bg-light {
+    background-color: #f8f9fa !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    overflow: hidden;
+}
+
+#section2 .bg-light span {
+    color: #6c757d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+#section2 .bg-light:hover span {
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+
+#section2 .fw-bold {
+    font-weight: bold;
+}
+
+#section2 .ps-3 {
+    padding-left: 1rem !important;
+}
+
+#section2 .d-flex span {
+    color: #6c757d;
+}
+
+#section2 h6 {
+    margin-bottom: 0;
+    color: #091E3E;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    #section2 .col-lg-6.pt-4 {
+        min-height: 300px;
+    }
+    
+    #section2 .container-xxl {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+} 
+ 

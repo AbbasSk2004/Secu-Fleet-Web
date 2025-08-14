@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import '../../../assets/css/products/route-planing/route-planning-safety.css';
 
 const RoutePlanningSafety = () => {
   return (
@@ -22,7 +23,7 @@ const RoutePlanningSafety = () => {
               </div>
             </div>
             <div className="col-lg-6">
-              <h1 className="mb-4">Route Safety and Compliance</h1>
+              <h1 className="mb-4 section-title">Route Safety and Compliance</h1>
               <p className="mb-4">
                 Ensuring Safe and Compliant Delivery Routes Through Comprehensive Monitoring and Regulatory Adherence.
               </p>

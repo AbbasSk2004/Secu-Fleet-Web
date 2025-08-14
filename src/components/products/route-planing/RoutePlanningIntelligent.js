@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import '../../../assets/css/products/route-planing/route-planning-intelligent.css';
 
 const RoutePlanningIntelligent = () => {
   return (
@@ -9,7 +10,7 @@ const RoutePlanningIntelligent = () => {
         <div className="container">
           <div className="row g-5">
             <div className="col-lg-6">
-              <h1 className="mb-4">Intelligent Route Planning</h1>
+              <h1 className="mb-4 section-title">Intelligent Route Planning</h1>
               <p className="mb-4">
                 Leverage real-time tracking and data analytics to optimize your fleet&apos;s
                 routing and logistics, driving efficiency, visibility, and informed

@@ -1,0 +1,336 @@
+/* Route Planning Services Component Styles */
+
+/* Main section background */
+.route-planning-services {
+  position: relative;
+  background: linear-gradient(135deg, #091E3E 0%, #0a2a4a 50%, #091E3E 100%);
+  background-image: 
+    linear-gradient(135deg, rgba(9, 30, 62, 0.9) 0%, rgba(10, 42, 74, 0.8) 50%, rgba(9, 30, 62, 0.9) 100%),
+    url('https://i.ibb.co/dPj3g9h/31.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  padding: 40px 0 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-planning-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(9, 30, 62, 0.3);
+  z-index: 1;
+}
+
+.route-planning-services .container-xxl {
+  position: relative;
+  z-index: 2;
+}
+
+.route-planning-services .section-title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+}
+
+/* Add animated underline like other sections */
+.route-planning-services .section-title::before {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 5px;
+  left: 50%;
+  margin-left: -75px;
+  bottom: 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.route-planning-services .section-title::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 5px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+  background: #FFFFFF;
+  animation: section-title-run-center 5s infinite linear;
+}
+
+@keyframes section-title-run-center {
+  0% { left: 50%; margin-left: -75px; } 
+  50% { left: 50%; margin-left: 45px; } 
+  100% { left: 50%; margin-left: -75px; }
+}
+
+/* Navigation Tabs Styles */
+.route-planning-services .nav-tabs-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.route-planning-services .nav-pills {
+  border: none;
+  gap: 15px;
+}
+
+.route-planning-services .nav-link {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.route-planning-services .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.route-planning-services .nav-link:hover::before {
+  left: 100%;
+}
+
+.route-planning-services .nav-link:hover {
+  background: rgba(6, 163, 218, 0.2);
+  border-color: #06A3DA;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(6, 163, 218, 0.3);
+}
+
+.route-planning-services .nav-link.active {
+  background: linear-gradient(135deg, #06A3DA 0%, #0489b3 100%);
+  border-color: #06A3DA;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(6, 163, 218, 0.4);
+  transform: translateY(-2px);
+}
+
+.route-planning-services .nav-link h4 {
+  color: inherit;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Icon Styles */
+.route-planning-services .greenIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.route-planning-services .nav-link:hover .greenIcon,
+.route-planning-services .nav-link.active .greenIcon {
+  filter: brightness(0) invert(1);
+  transform: scale(1.1);
+}
+
+/* Tab Content Styles */
+.route-planning-services .tab-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.route-planning-services .tab-pane {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Image Styles */
+.route-planning-services .service-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.route-planning-services .service-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.route-planning-services .service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.route-planning-services .service-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Content Styles */
+.route-planning-services .service-content {
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(6, 163, 218, 0.1) 0%, rgba(9, 30, 62, 0.05) 100%);
+  border-radius: 12px;
+  border-left: 4px solid #06A3DA;
+}
+
+.route-planning-services .service-content h3 {
+  color: #091E3E;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.route-planning-services .service-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.route-planning-services .service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.route-planning-services .service-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.route-planning-services .service-features i {
+  color: #34AD54;
+  margin-right: 12px;
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .route-planning-services {
+    padding: 60px 0;
+    background-attachment: scroll;
+  }
+  
+  .route-planning-services .section-title {
+    font-size: 2rem;
+  }
+  
+  .route-planning-services .section-title::before {
+    width: 120px;
+    margin-left: -60px;
+  }
+  
+  .route-planning-services .section-title::after {
+    margin-left: -60px;
+  }
+  
+  .route-planning-services .nav-tabs-container {
+    margin-bottom: 30px;
+  }
+  
+  .route-planning-services .nav-link h4 {
+    font-size: 1rem;
+  }
+  
+  .route-planning-services .greenIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .route-planning-services .tab-content {
+    padding: 20px;
+  }
+  
+  .route-planning-services .service-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .route-planning-services .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .route-planning-services .section-title::before {
+    width: 100px;
+    margin-left: -50px;
+  }
+  
+  .route-planning-services .section-title::after {
+    margin-left: -50px;
+  }
+  
+  .route-planning-services .nav-link {
+    padding: 15px;
+  }
+  
+  .route-planning-services .nav-link h4 {
+    font-size: 0.9rem;
+  }
+  
+  .route-planning-services .greenIcon {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading animation for tab transitions */
+.route-planning-services .tab-pane.fade {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.route-planning-services .tab-pane.fade.show {
+  opacity: 1;
+} 
