@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import '../../../assets/css/products/operationalcontrol.css';
+import '../../../assets/css/products/fleet-management/operationalcontrol.css';
 
 const OperationalControl = () => {
   return (

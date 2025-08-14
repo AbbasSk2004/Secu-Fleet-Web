@@ -19,8 +19,7 @@ export default function FleetManagementPage() {
   return (
     <Layout>
       <div className="fleet-management-page" style={{ overflow: 'hidden' }}>
-        <FleetHero />
-        
+        <FleetHero /> 
         <OperationalControl />
         <SafetyCompliance />
         <EcoFleet />

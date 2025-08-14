@@ -1,0 +1,263 @@
+/* Vehicle Inspection About Section Styles */
+.vehicle-inspection-about {
+  background-color: #091E3E;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  color: #f1f1f1;
+}
+
+.vehicle-inspection-about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(6, 163, 218, 0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20px, 20px);
+  }
+}
+
+.vehicle-inspection-about .container-xxl {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Title Styles */
+.vehicle-inspection-about h1 {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.vehicle-inspection-about h1::before {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.vehicle-inspection-about h1::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  animation: section-title-run-left 5s infinite linear;
+}
+
+@keyframes section-title-run-left {
+  0% { left: 0; } 
+  50% { left: 144px; } 
+  100% { left: 0; }
+}
+
+/* Content Text Styles */
+.vehicle-inspection-about p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* Image Styles */
+.vehicle-inspection-about .position-relative {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vehicle-inspection-about .position-relative:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.vehicle-inspection-about .img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.vehicle-inspection-about .position-relative:hover .img-fluid {
+  transform: scale(1.05);
+}
+
+/* Feature Items Styles */
+.vehicle-inspection-about .feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.vehicle-inspection-about .feature-item:hover {
+  background: rgba(6, 163, 218, 0.1);
+  border-color: rgba(6, 163, 218, 0.3);
+  transform: translateX(5px);
+}
+
+.vehicle-inspection-about .feature-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Number Badge Styles */
+.vehicle-inspection-about .feature-number {
+  background: linear-gradient(135deg, #06A3DA 0%, #0489b3 100%);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(6, 163, 218, 0.3);
+  transition: all 0.3s ease;
+}
+
+.vehicle-inspection-about .feature-item:hover .feature-number {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(6, 163, 218, 0.4);
+}
+
+/* Feature Content Styles */
+.vehicle-inspection-about .feature-content h6 {
+  color: #06A3DA;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.vehicle-inspection-about .feature-content span {
+  color: #cbd5e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Animation Classes */
+.vehicle-inspection-about .wow {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.vehicle-inspection-about .fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vehicle-inspection-about {
+    padding: 60px 0;
+  }
+  
+  .vehicle-inspection-about h1 {
+    font-size: 2rem;
+  }
+  
+  .vehicle-inspection-about p {
+    font-size: 1rem;
+  }
+  
+  .vehicle-inspection-about .feature-item {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .vehicle-inspection-about .feature-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .vehicle-inspection-about .feature-content h6 {
+    font-size: 1.1rem;
+  }
+  
+  .vehicle-inspection-about .feature-content span {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-inspection-about h1 {
+    font-size: 1.8rem;
+  }
+  
+  .vehicle-inspection-about .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .vehicle-inspection-about .feature-number {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Container spacing adjustments */
+.vehicle-inspection-about .container-xxl {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.vehicle-inspection-about .row.g-5 {
+  align-items: center;
+}
+
+.vehicle-inspection-about .col-lg-6.pt-4 {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+} 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import '../../../assets/css/products/ecofleet.css';
+import '../../../assets/css/products/fleet-management/ecofleet.css';
 
 const EcoFleet = () => {
   return (

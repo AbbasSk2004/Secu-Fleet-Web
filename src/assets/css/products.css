@@ -23,19 +23,8 @@ body{
   .mb-3{
     padding-top: 10px;
   }
-  .mb-4,#section4 .d-flex{
+  .mb-4{
     padding-top: 30px;
-  }
-
-/* Section 4 styles */
-#section4{
-    background-color: #091E3E;
-  }
-  #section4 span, #section4 p{
-    color: white;
-  }
-  #section4 h1 , #section4 h6{
-    color: rgb(6, 163, 218);
   }
 
 .btn:before{

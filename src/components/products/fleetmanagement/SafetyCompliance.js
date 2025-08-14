@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../assets/css/products/safetycompliance.css';
+import '../../../assets/css/products/fleet-management/safetycompliance.css';
 
 const SafetyCompliance = () => {
   return (
