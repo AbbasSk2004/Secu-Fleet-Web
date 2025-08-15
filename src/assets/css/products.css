@@ -8,22 +8,22 @@ body{
     color: white;
   }
 
-/* General container styles - keeping for other sections */
-.container-xxl {
+/* General container styles - scoped to avoid footer conflicts */
+.products-section .container-xxl {
     margin-top: 0;
     padding-top: 0;
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
 
-/* General spacing utilities */
-.text-center{
+/* General spacing utilities - scoped to avoid footer conflicts */
+.products-section .text-center{
     padding-bottom: 10px;
   }
-  .mb-3{
+  .products-section .mb-3{
     padding-top: 10px;
   }
-  .mb-4{
+  .products-section .mb-4{
     padding-top: 30px;
   }
 

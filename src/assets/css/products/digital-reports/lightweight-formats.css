@@ -1,0 +1,295 @@
+/* Lightweight Formats Section Styles */
+.lightweight-formats-section {
+  background-color: #091E3E;
+  padding: 80px 0;
+  position: relative;
+}
+
+.lightweight-formats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 118, 209, 0.02) 0%, rgba(26, 118, 209, 0.05) 50%, rgba(26, 118, 209, 0.02) 100%);
+  pointer-events: none;
+}
+
+.lightweight-formats-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.lightweight-formats-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #06A3DA;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.lightweight-formats-section h1::before {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+  background: #06A3DA;
+  border-radius: 2px;
+}
+
+.lightweight-formats-section h1::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  animation: section-title-run-left 5s infinite linear;
+}
+
+@keyframes section-title-run-left {
+  0% { left: 0; } 
+  50% { left: 144px; } 
+  100% { left: 0; }
+}
+
+.lightweight-formats-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: white;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.lightweight-formats-section .feature-item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(26, 118, 209, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lightweight-formats-section .feature-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #1A76D1 0%, #06A3DA 100%);
+  transition: all 0.3s ease;
+}
+
+.lightweight-formats-section .feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(26, 118, 209, 0.15);
+  border-color: rgba(26, 118, 209, 0.2);
+}
+
+.lightweight-formats-section .feature-item:hover::before {
+  width: 6px;
+}
+
+.lightweight-formats-section .feature-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #1A76D1 0%, #06A3DA 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(26, 118, 209, 0.3);
+  transition: all 0.3s ease;
+}
+
+.lightweight-formats-section .feature-item:hover .feature-number {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(26, 118, 209, 0.4);
+}
+
+.lightweight-formats-section .feature-content h6 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1A76D1;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.lightweight-formats-section .feature-item:hover .feature-content h6 {
+  color: #06A3DA;
+}
+
+.lightweight-formats-section .feature-content span {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.lightweight-formats-section .image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px;
+}
+
+.lightweight-formats-section .image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 118, 209, 0.05) 0%, rgba(6, 163, 218, 0.05) 100%);
+  pointer-events: none;
+}
+
+.lightweight-formats-section .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.lightweight-formats-section .image-container:hover img {
+  transform: scale(1.02);
+}
+
+/* Animation classes */
+.lightweight-formats-section .wow {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.lightweight-formats-section .fadeIn {
+  animation-name: fadeIn;
+}
+
+.lightweight-formats-section .fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.lightweight-formats-section .fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.lightweight-formats-section .fadeInRight {
+  animation-name: fadeInRight;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .lightweight-formats-section {
+    padding: 60px 0;
+  }
+  
+  .lightweight-formats-section h1 {
+    font-size: 2rem;
+  }
+  
+  .lightweight-formats-section .image-container {
+    margin-top: 40px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lightweight-formats-section {
+    padding: 40px 0;
+  }
+  
+  .lightweight-formats-section h1 {
+    font-size: 1.8rem;
+  }
+  
+  .lightweight-formats-section .feature-item {
+    padding: 20px;
+  }
+  
+  .lightweight-formats-section .feature-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .lightweight-formats-section .feature-content h6 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .lightweight-formats-section h1 {
+    font-size: 1.6rem;
+  }
+  
+  .lightweight-formats-section .feature-item {
+    padding: 15px;
+  }
+  
+  .lightweight-formats-section .feature-number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    margin-right: 15px;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+} 

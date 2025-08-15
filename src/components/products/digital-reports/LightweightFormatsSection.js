@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import '../../../assets/css/products/digital-reports/lightweight-formats.css';
 
 const LightweightFormatsSection = () => {
   const features = [
@@ -20,43 +22,43 @@ const LightweightFormatsSection = () => {
   ];
 
   return (
-    <section id="section2">
-      <div className="container-xxl py-5">
-        <div className="container">
-          <div className="row g-5">
-            <div className="col-lg-6 pt-4" style={{ minHeight: '400px' }}>
-              <div className="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
-                <img
-                  className="img-fluid w-100 h-100"
-                  src="https://i.ibb.co/bm2YSmP/Fleet-Management-109.png"
-                  style={{ objectFit: 'cover' }}
-                  alt="Lightweight Formats"
-                />
-              </div>
+    <section className="lightweight-formats-section">
+      <div className="container">
+        <div className="row g-5 align-items-center">
+          <div className="col-lg-6">
+            <div className="image-container wow fadeInLeft" data-wow-delay="0.1s">
+              <Image
+                className="img-fluid"
+                src="https://i.ibb.co/bm2YSmP/Fleet-Management-109.png"
+                alt="Lightweight Formats"
+                width={600}
+                height={400}
+                style={{ objectFit: 'cover' }}
+                priority={true}
+              />
             </div>
-            <div className="col-lg-6">
-              <h1 className="mb-4">Lightweight Reporting Formats</h1>
-              <p className="mb-4">
+          </div>
+          
+          <div className="col-lg-6">
+            <div className="wow fadeInRight" data-wow-delay="0.2s">
+              <h1>Lightweight Reporting Formats</h1>
+              <p>
                 To match the fleeting nature of the website, we use lightweight report formats that can be quickly loaded and viewed, such as simple data visualizations or concise text-based summaries.
               </p>
-              <div className="row g-4 mb-3 pb-3">
-                {features.map((feature, index) => (
-                  <div key={index} className="col-12 wow fadeIn" data-wow-delay={`${0.1 + index * 0.2}s`}>
-                    <div className="d-flex">
-                      <div
-                        className="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
-                        style={{ width: '45px', height: '45px' }}
-                      >
-                        <span className="fw-bold text-secondary">{feature.number}</span>
-                      </div>
-                      <div className="ps-3">
-                        <h6>{feature.title}</h6>
-                        <span>{feature.description}</span>
-                      </div>
+            </div>
+            
+            <div className="row g-4">
+              {features.map((feature, index) => (
+                <div key={index} className="col-12 wow fadeInUp" data-wow-delay={`${0.3 + index * 0.2}s`}>
+                  <div className="feature-item d-flex">
+                    <div className="feature-number">{feature.number}</div>
+                    <div className="feature-content">
+                      <h6>{feature.title}</h6>
+                      <span>{feature.description}</span>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
