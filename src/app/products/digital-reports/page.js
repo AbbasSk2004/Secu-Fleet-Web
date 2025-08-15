@@ -4,9 +4,9 @@ import HeroSection from '../../../components/products/digital-reports/HeroSectio
 import ServiceSection from '../../../components/products/digital-reports/ServiceSection';
 import LightweightFormatsSection from '../../../components/products/digital-reports/LightweightFormatsSection';
 import MinimalArchivingSection from '../../../components/products/digital-reports/MinimalArchivingSection';
-import '../../../assets/css/products.css';
-import '../../../assets/css/animation.css';
-import '../../../assets/css/products/animate.min.css';
+
+
+
 
 
 export const metadata = {
