@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import '../../assets/css/aboutSlider.css';
+import '../../assets/css/home/aboutSlider.css';
 
 const AboutSlider = () => {
   const [currentSection, setCurrentSection] = useState('workflow');

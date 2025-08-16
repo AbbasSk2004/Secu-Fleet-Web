@@ -88,9 +88,6 @@ export const metadata = {
   category: 'Technology',
   classification: 'Fleet Management Software',
   referrer: 'origin-when-cross-origin',
-  themeColor: '#007bff',
-  colorScheme: 'light',
-  viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },
@@ -100,6 +97,13 @@ export const metadata = {
     shortcut: '/favicon/favicon.ico',
     apple: '/favicon/favicon.ico',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#007bff',
+  colorScheme: 'light',
 };
 
 export default function RootLayout({ children }) {
@@ -113,7 +117,6 @@ export default function RootLayout({ children }) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0/dist/css/lightgallery.min.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="CXJyONWmRMKq4tUyebOkCqmmArNltry85z0GuUEHgaE" />

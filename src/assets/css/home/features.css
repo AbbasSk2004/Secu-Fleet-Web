@@ -1,0 +1,352 @@
+/* Features Section Styles - Home Page Specific */
+
+/* Features Section Container */
+.Features {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video Background */
+.Features .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Video Fallback */
+.Features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #091E3E 0%, #06A3DA 100%);
+  z-index: -2;
+  opacity: 0.8;
+}
+
+/* Container Styling */
+.Features .container-fluid {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 4rem 0;
+}
+
+.Features .container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Title */
+.Features .section-title {
+  margin-bottom: 3rem;
+}
+
+.Features .section-title h5 {
+  color: var(--primary) !important;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.Features .section-title h1 {
+  color: white !important;
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+/* Feature Items */
+.Features .row {
+  margin-top: 10px;
+}
+
+.Features .col-12 {
+  margin-bottom: 2rem;
+  height: 200px; /* Fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Feature Icon Container */
+.Features .bg-primary {
+  background-color: var(--primary) !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.Features .bg-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(6, 163, 218, 0.4);
+}
+
+/* Feature Icons */
+.Features .bg-primary i {
+  color: white;
+  font-size: 24px;
+}
+
+/* Feature Headings */
+.Features h4 {
+  margin-left: 10px;
+  color: #06a3da;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+  flex-shrink: 0; /* Prevent heading from shrinking */
+}
+
+.Features h4:hover {
+  color: #ffffff;
+}
+
+/* Feature Descriptions */
+.Features p {
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  flex-grow: 1; /* Allow text to fill remaining space */
+}
+
+.Features p:hover {
+  transform: translateX(5px);
+}
+
+/* Feature Icons in Text */
+.Features p i {
+  margin-right: 10px;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.Features p:hover i {
+  color: #ffffff;
+}
+
+/* Second Row Spacing */
+.Features .scndRow {
+  margin-top: 3px;
+}
+
+/* Animation for Features Section */
+@keyframes features-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Features {
+  animation: features-fade-in 1s ease-in-out;
+}
+
+/* Feature Item Hover Effects */
+.Features .col-12 {
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 10px;
+  min-height: 200px; /* Ensure minimum height */
+  width: 100%; /* Ensure full width */
+}
+
+.Features .col-12:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Features .section-title h1 {
+    font-size: 2rem;
+  }
+  
+  .Features .container {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .Features p {
+    font-size: 16px;
+  }
+  
+  .Features h4 {
+    font-size: 1.2rem;
+  }
+  
+  .Features .bg-primary {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .Features .bg-primary i {
+    font-size: 20px;
+  }
+  
+  .Features .col-12 {
+    height: 180px; /* Slightly smaller height for mobile */
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Features .section-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .Features .container {
+    padding: 1rem;
+    margin: 0 10px;
+  }
+  
+  .Features p {
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .Features h4 {
+    font-size: 1.1rem;
+    margin-left: 8px;
+  }
+  
+  .Features .bg-primary {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .Features .bg-primary i {
+    font-size: 18px;
+  }
+  
+  .Features .col-12 {
+    padding: 0.75rem;
+    height: 160px; /* Even smaller height for small mobile */
+    min-height: 160px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Features .section-title h1 {
+    font-size: 2.2rem;
+  }
+  
+  .Features p {
+    font-size: 18px;
+  }
+  
+  .Features .container {
+    padding: 2.5rem;
+  }
+  
+  .Features .col-12 {
+    height: 190px; /* Medium height for tablets */
+    min-height: 190px;
+  }
+}
+
+/* Loading State */
+.features-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Error State */
+.features-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.features-error p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Accessibility */
+.Features .col-12:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Video Loading Animation */
+@keyframes video-loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Features .bg-video {
+  animation: video-loading 1s ease-in-out;
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Enhanced styling for high DPI displays can be added here if needed */
+}
+
+/* Print Styles */
+@media print {
+  .Features .bg-video {
+    display: none;
+  }
+  
+  .Features {
+    background: #f5f5f5;
+  }
+  
+  .Features .container {
+    background: white;
+    color: black;
+  }
+  
+  .Features h1,
+  .Features h4,
+  .Features p {
+    color: black !important;
+  }
+} 

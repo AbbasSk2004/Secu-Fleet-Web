@@ -1,28 +1,22 @@
 'use client';
 import React from 'react';
+import '../../assets/css/home/hero.css';
 
 const HeroCarousel = () => {
   return (
-    <div className="container-fluid position-relative p-0">
+    <div className="container-fluid position-relative p-0 hero-carousel-container">
       {/* slider */}
       <div id="header-carousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
         <div className="carousel-inner">
-          <div className="carousel-item active" style={{ zIndex: -1 }}>
-            <div style={{ padding: '51.37% 0 0 0', position: 'relative' }}>
+          <div className="carousel-item active">
+            <div className="hero-video-wrapper">
               <video 
+                className="hero-video"
                 autoPlay 
                 muted 
                 loop 
                 playsInline
                 suppressHydrationWarning
-                style={{ 
-                  position: 'absolute', 
-                  top: 0, 
-                  left: 0, 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover' 
-                }}
               >
                 <source src="/assets/videos/secuhome.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

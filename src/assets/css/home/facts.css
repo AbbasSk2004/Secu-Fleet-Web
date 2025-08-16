@@ -1,0 +1,219 @@
+/* Facts Section Styles - Home Page Specific */
+
+/* Facts Section Container */
+.facts {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.facts .container-fluid {
+  padding: 2rem 0;
+}
+
+/* Facts Boxes */
+.facts .box {
+  margin: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.facts .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Facts Background Colors */
+.facts .bg-primary,
+.facts .bg-light {
+  background-color: #091E3E !important;
+  color: white;
+}
+
+/* Facts Content Styling */
+.facts .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  height: 150px;
+}
+
+.facts img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.facts h5 {
+  color: #ffffff !important;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.facts h1 {
+  color: #ffffff !important;
+  margin-bottom: 0;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.facts .ps-4 {
+  padding-left: 1.5rem;
+}
+
+/* Counter Animation */
+.facts [data-toggle="counter-up"] {
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (min-width: 991.98px) {
+  .facts {
+    margin-top: -7%; /* Overlap with hero section */
+  }
+
+  .facts .container-fluid {
+    height: 8vh;
+  }
+}
+
+@media (max-width: 991.97px) and (min-width: 575px) {
+  .facts {
+    margin-top: 0%;
+  }
+
+  .facts .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .facts .box,
+  .facts .col-sm-4 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .facts img {
+    width: 60px !important;
+  }
+
+  .facts h5 {
+    font-size: 20px !important;
+  }
+
+  .facts h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 575px) {
+  .facts {
+    background-color: #091E3E;
+    padding: 2rem 0;
+  }
+
+  .facts .bg-primary,
+  .facts .bg-light {
+    background-color: transparent !important;
+  }
+
+  .facts .box {
+    height: auto;
+    min-height: 120px;
+    padding: 1.5rem;
+  }
+
+  .facts img {
+    width: 50px;
+    margin-right: 0.75rem;
+  }
+
+  .facts h5 {
+    font-size: 18px !important;
+  }
+
+  .facts h1 {
+    font-size: 22px;
+  }
+
+  .facts .ps-4 {
+    padding-left: 1rem;
+  }
+}
+
+/* Animation for Facts Section */
+@keyframes facts-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.facts {
+  animation: facts-fade-in 0.8s ease-in-out;
+}
+
+/* Counter Animation */
+@keyframes counter-increment {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.facts [data-toggle="counter-up"] {
+  animation: counter-increment 0.5s ease-in-out;
+}
+
+/* Hover Effects */
+.facts .box:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.facts .box:hover h1 {
+  color: var(--primary) !important;
+  transition: color 0.3s ease;
+}
+
+/* Accessibility */
+.facts .box:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Loading State */
+.facts-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+/* Error State */
+.facts-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.facts-error p {
+  margin: 0;
+  font-size: 1rem;
+} 

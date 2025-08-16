@@ -1,13 +1,20 @@
 import React from 'react';
+import Image from 'next/image';
 import '@/assets/css/about/contact/contact-banner.css';
 
 const ContactBanner = () => {
   return (
-    <section className="contact-banner" style={{
-      backgroundImage: 'url("https://i.ibb.co/7Y94mPQ/shipping.png")',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover'
-    }}>
+    <section className="contact-banner">
+      <div className="banner-background">
+        <Image
+          src="https://i.ibb.co/7Y94mPQ/shipping.png"
+          alt="Contact Banner Background"
+          fill
+          priority
+          style={{ objectFit: 'cover' }}
+          unoptimized
+        />
+      </div>
       <div className="banner-overlay">
         <div className="container">
           <div className="row">
@@ -38,4 +45,4 @@ const ContactBanner = () => {
   );
 };
 
-export default ContactBanner; 
+export default ContactBanner;

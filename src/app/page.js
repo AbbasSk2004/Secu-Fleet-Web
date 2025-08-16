@@ -15,10 +15,10 @@ import Blogs from '../components/home/Blogs';
 
 // Import CSS files needed for home page components
 // Load base styles first, then custom component styles last to ensure proper overrides
-import '../assets/css/index.css';
+
 import '../assets/css/animation.css';
-import '../assets/css/style.css';
-import '../assets/css/home/quote-section.css';
+
+
 
 export const metadata = {
 	title: 'SecuFleet - Fleet Management Solutions',

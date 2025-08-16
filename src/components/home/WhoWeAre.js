@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import '../../assets/css/home/who-we-are.css';
 
 const WhoWeAre = () => {
   return (
@@ -11,18 +12,13 @@ const WhoWeAre = () => {
           muted 
           playsInline 
           suppressHydrationWarning
-          style={{ 
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
         >
           <source src="/assets/videos/canva3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
       <div className="who-we-are-content">
-        <h1 className="who-we-are-title" style={{ textTransform: 'uppercase' }}>Leading with knowledge, Driven by results</h1>
+        <h1 className="who-we-are-title">Leading with knowledge, Driven by results</h1>
         <div className="who-we-are-description-wrapper">
           <p className="who-we-are-description">
             At SecuFleet IoT Group, our mission is to forge an interconnected ecosystem that seamlessly adapts your business to the dynamic realities of a rapidly expanding network of intelligent devices. By leveraging cutting-edge embedded systems and sensors, we facilitate real-time data collection and exchange. Our commitment to understanding client needs ensures the delivery of tailored solutions that foster a proactive and efficient environment.

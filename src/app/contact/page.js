@@ -7,7 +7,7 @@ import RequestDemo from '@/components/contact/RequestDemo';
 import FAQ from '@/components/contact/FAQ';
 
 // Import only global CSS files
-import '@/assets/css/contact.css';
+
 import '@/assets/css/animation.css';
 
 export const metadata = {

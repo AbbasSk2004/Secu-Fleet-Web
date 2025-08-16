@@ -78,10 +78,15 @@ const OfficeLocations = () => {
           
           <div className="world-map-container mb-5">
             <div className="world-map-wrapper wow zoomIn" data-wow-delay="0.2s">
-              <img 
+              <Image 
                 src="https://i.ibb.co/2KBVcMK/mapWLoc.png" 
                 alt="World Map with SecuFleet Locations" 
                 className="world-map img-fluid"
+                width={1200}
+                height={600}
+                priority
+                unoptimized
+                style={{ width: '100%', height: 'auto' }}
               />
               <div className="map-overlay">
                 <div className="animated-dots">

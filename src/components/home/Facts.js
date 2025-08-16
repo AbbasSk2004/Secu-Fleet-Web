@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import '../../assets/css/home/facts.css';
 
 const Facts = () => {
   const [isVisible, setIsVisible] = useState(false);

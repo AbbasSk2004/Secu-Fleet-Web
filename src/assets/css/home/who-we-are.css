@@ -1,0 +1,277 @@
+/* Who We Are Section Styles - Home Page Specific */
+
+/* Who We Are Section Container */
+.who-we-are-section {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Container */
+.who-we-are-content {
+  position: relative;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  z-index: 2;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Title Styling */
+.who-we-are-title {
+  font-size: 30px;
+  color: #06A3DA;
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* Description Wrapper */
+.who-we-are-description-wrapper {
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+/* Description Text */
+.who-we-are-description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+  margin-top: 30px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* Animation for Who We Are Section */
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(3000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-25px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.who-we-are-content {
+  animation: bounce-in-right 1s ease-in;
+}
+
+/* Hover Effects */
+.who-we-are-content:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.who-we-are-title:hover {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .who-we-are-title {
+    font-size: 20px;
+  }
+  
+  .who-we-are-description {
+    font-size: 16px;
+  }
+  
+  .who-we-are-content {
+    margin-top: 50px;
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .who-we-are-section {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .who-we-are-content {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .who-we-are-description-wrapper {
+    padding: 0;
+  }
+  
+  .who-we-are-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .who-we-are-description {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .who-we-are-title {
+    font-size: 26px;
+  }
+  
+  .who-we-are-description {
+    font-size: 18px;
+  }
+  
+  .who-we-are-content {
+    max-width: 700px;
+    padding: 35px 25px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .who-we-are-content {
+    max-width: 900px;
+    padding: 50px 30px;
+  }
+  
+  .who-we-are-title {
+    font-size: 35px;
+  }
+  
+  .who-we-are-description {
+    font-size: 22px;
+  }
+}
+
+/* Loading State */
+.who-we-are-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Error State */
+.who-we-are-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.who-we-are-error p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Video Fallback */
+.video-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #091E3E 0%, #06A3DA 100%);
+  z-index: -2;
+  opacity: 0.8;
+}
+
+/* Accessibility */
+.who-we-are-content:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Video Loading Animation */
+@keyframes video-loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.video-background video {
+  animation: video-loading 1s ease-in-out;
+}
+
+/* Content Fade In */
+@keyframes content-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.who-we-are-content {
+  animation: content-fade-in 1.2s ease-in-out 0.3s both;
+}
+
+/* Mobile Video Optimization */
+@media (max-width: 768px) {
+  .video-background video {
+    object-position: center 25%;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .who-we-are-content {
+    backdrop-filter: blur(10px);
+  }
+} 

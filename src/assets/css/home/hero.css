@@ -1,0 +1,261 @@
+/* Hero Section Styles - Home Page Specific */
+
+/* Hero Carousel Container */
+.hero-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Video Background for Hero */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video-wrapper {
+  padding: 51.37% 0 0 0;
+  position: relative;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Carousel Styles */
+#header-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.carousel-item.active {
+  z-index: -1;
+}
+
+/* Carousel Caption Overlay */
+.carousel-caption {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(9, 30, 62, .7);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  z-index: 2;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+  line-height: 1.4;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hero-btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  transition: .5s;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.hero-btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: 2px solid var(--primary);
+  box-shadow: inset 0 0 0 50px transparent;
+}
+
+.hero-btn-primary:hover {
+  box-shadow: inset 0 0 0 0 var(--primary);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.hero-btn-secondary {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+
+.hero-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .carousel-caption h5 {
+    font-size: 14px;
+    font-weight: 500 !important;
+  }
+
+  .carousel-caption h1 {
+    font-size: 30px;
+    font-weight: 600 !important;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .hero-btn {
+    padding: 12px 30px;
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-video-container {
+    height: 80vh;
+  }
+  
+  .carousel-item {
+    height: 80vh;
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation for Hero Section */
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: hero-fade-in 1s ease-in-out;
+}
+
+/* Fallback for browsers that don't support video */
+.hero-fallback {
+  background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), 
+              url('/assets/images/hero-fallback.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+/* Loading state for video */
+.hero-video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+/* Video error handling */
+.hero-video-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-video-error p {
+  margin: 0;
+  font-size: 1rem;
+} 

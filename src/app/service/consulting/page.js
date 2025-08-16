@@ -9,7 +9,7 @@ import ConsultingExpertise from '../../../components/service/consulting/Consulti
 
 // Import CSS files
 import '../../../assets/css/consulting.css';
-import '../../../assets/css/style.css';
+
 import '../../../assets/css/animation.css';
 
 const ConsultingPage = () => {
