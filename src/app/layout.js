@@ -22,15 +22,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://secufleet.com'
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://secu-fleet-web.vercel.app'
 
 export const metadata = {
   title: {
-    default: "SecuFleet - Fleet Management Solutions",
-    template: "%s | SecuFleet"
+    default: "SecuFleet - Professional Fleet Management Solutions | GPS Tracking & Analytics",
+    template: "%s | SecuFleet - Fleet Management Solutions"
   },
-  description: "Professional fleet management solutions and consulting services. GPS tracking, vehicle inspection, route planning, and comprehensive fleet analytics.",
-  keywords: "fleet management, GPS tracking, vehicle inspection, route planning, fleet analytics, telematics, fleet efficiency, driver behavior, asset tracking",
+  description: "SecuFleet provides comprehensive fleet management solutions including GPS tracking, vehicle inspection, route planning, driver behavior monitoring, and real-time analytics. Optimize your fleet operations today.",
+  keywords: "fleet management, GPS tracking, vehicle inspection, route planning, fleet analytics, telematics, fleet efficiency, driver behavior, asset tracking, fleet optimization, vehicle monitoring, fleet safety, fuel management, maintenance tracking, fleet software, fleet technology, IoT fleet solutions, predictive maintenance, fleet reporting, fleet compliance",
   authors: [{ name: "SecuFleet" }],
   creator: "SecuFleet",
   publisher: "SecuFleet",
@@ -50,23 +50,24 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    title: 'SecuFleet - Fleet Management Solutions',
-    description: 'Professional fleet management solutions and consulting services',
+    title: 'SecuFleet - Professional Fleet Management Solutions',
+    description: 'Comprehensive fleet management solutions: GPS tracking, route optimization, driver monitoring, and real-time analytics for modern fleet operations.',
     siteName: 'SecuFleet',
     images: [
       {
         url: '/assets/images/logo/LogoNew-nobg.png',
         width: 1200,
         height: 630,
-        alt: 'SecuFleet Logo',
+        alt: 'SecuFleet - Fleet Management Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SecuFleet - Fleet Management Solutions',
-    description: 'Professional fleet management solutions and consulting services',
+    title: 'SecuFleet - Professional Fleet Management Solutions',
+    description: 'Comprehensive fleet management solutions: GPS tracking, route optimization, driver monitoring, and real-time analytics.',
     images: ['/assets/images/logo/LogoNew-nobg.png'],
+    creator: '@secufleet',
   },
   robots: {
     index: true,
@@ -79,6 +80,17 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
+    yandex: 'YOUR_YANDEX_VERIFICATION_CODE',
+    yahoo: 'YOUR_YAHOO_VERIFICATION_CODE',
+  },
+  category: 'Technology',
+  classification: 'Fleet Management Software',
+  referrer: 'origin-when-cross-origin',
+  themeColor: '#007bff',
+  colorScheme: 'light',
+  viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },
@@ -102,6 +114,23 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0/dist/css/lightgallery.min.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+        
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+          `}
+        </Script>
         
         {/* Structured Data */}
         <script

@@ -1,5 +1,5 @@
 export default async function sitemap() {
-	const BASE_URL = 'https://secufleet.com'
+	const BASE_URL = 'https://secu-fleet-web.vercel.app'
 
 	const staticRoutes = [
 		{ url: `${BASE_URL}/`, lastModified: new Date() },

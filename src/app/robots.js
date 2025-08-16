@@ -4,7 +4,7 @@ export default function robots() {
 			userAgent: '*',
 			allow: '/',
 		},
-		sitemap: 'https://secufleet.com/sitemap.xml',
-		host: 'https://secufleet.com',
+		sitemap: 'https://secu-fleet-web.vercel.app/sitemap.xml',
+		host: 'https://secu-fleet-web.vercel.app',
 	}
 } 
