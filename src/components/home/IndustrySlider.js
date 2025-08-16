@@ -130,7 +130,7 @@ const IndustrySlider = () => {
             <div className="Islide-caption"><b>Car Tracking</b></div>
           </div>
           <div className="Islide">
-            <img src="/assets/images/mercedes.webp" loading="lazy" alt="mercedes" />
+            <img src="/assets/images/mercedes.png" loading="lazy" alt="mercedes" />
             <div className="Islide-caption"><b>GPS Tracking</b></div>
           </div>
           <div className="Islide">
