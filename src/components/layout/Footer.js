@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import '../../assets/css/style.css';
 import '../../assets/css/index.css';
 import '../../assets/css/animation.css';
@@ -156,7 +157,7 @@ const Footer = () => {
             <div className="col-lg-4 col-md-6">
               <div className="footer-logo-section">
                 <Link href="/" className="text-decoration-none">
-                  <img src="/assets/images/logo/footerLogo.png" alt="SecuFleet Logo" />
+                  <Image src="/assets/images/logo/footerLogo.png" alt="SecuFleet Logo" width={160} height={48} />
                   <h1 className="text-white">SecuFleet</h1>
                 </Link>
               </div>

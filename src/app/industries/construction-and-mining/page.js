@@ -7,6 +7,11 @@ import FeatureGroupGpsConstruction from '../../../components/industries/construc
 import FeatureGroupBeaconTools from '../../../components/industries/construction-and-mining/FeatureGroupBeaconTools';
 import FeatureGroupMiningControl from '../../../components/industries/construction-and-mining/FeatureGroupMiningControl';
 
+export const metadata = {
+	title: 'Construction & Mining | SecuFleet Industries',
+	description: 'Fleet solutions tailored for construction and mining: asset tracking, safety, and real-time operational control.',
+}
+
 const ConstructionAndMiningPage = () => {
   return (
     <>

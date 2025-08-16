@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import CarSharingHero from '@/components/products/car-sharing/CarSharingHero';
@@ -9,6 +7,11 @@ import CarSharingAbout from '@/components/products/car-sharing/CarSharingAbout';
 import CarSharingAnalytics from '@/components/products/car-sharing/CarSharingAnalytics';
 import '@/assets/css/products.css';
 import '@/assets/css/animation.css';
+
+export const metadata = {
+	title: 'Car Sharing - SecuFleet',
+	description: 'Manage shared vehicles efficiently with scheduling, tracking, and analytics for car sharing fleets.',
+}
 
 const CarSharingPage = () => {
   return (

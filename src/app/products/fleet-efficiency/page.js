@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ScheduleSection from '@/components/products/fleet-efficiency/ScheduleSection';
@@ -9,6 +7,11 @@ import DataDrivenSection from '@/components/products/fleet-efficiency/DataDriven
 import EcoFriendlySection from '@/components/products/fleet-efficiency/EcoFriendlySection';
 import '@/assets/css/products.css';
 import '@/assets/css/animation.css';
+
+export const metadata = {
+	title: 'Fleet Efficiency - SecuFleet',
+	description: 'Boost fleet efficiency with optimized operations, fuel management, and data-driven decisions.',
+}
 
 export default function FleetEfficiencyPage() {
   return (

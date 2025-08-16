@@ -7,6 +7,12 @@ import Part3 from '../../components/about/Part3';
 import '../../assets/css/aboutUS.css';
 import '../../assets/css/animation.css';
 
+export const metadata = {
+	title: 'About SecuFleet',
+	description: 'Learn about SecuFleet – our mission, values, and the team delivering leading fleet management and telematics solutions.',
+	keywords: 'About SecuFleet, telematics company, fleet management company, SecuFleet team, mission and values',
+}
+
 const AboutPage = () => {
   return (
     <Layout>

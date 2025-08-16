@@ -22,6 +22,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://secufleet.com'
+
 export const metadata = {
   title: {
     default: "SecuFleet - Fleet Management Solutions",
@@ -37,14 +39,17 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://secufleet.com'),
+  metadataBase: new URL(baseUrl),
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': `${baseUrl}/sitemap.xml`,
+    },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://secufleet.com',
+    url: baseUrl,
     title: 'SecuFleet - Fleet Management Solutions',
     description: 'Professional fleet management solutions and consulting services',
     siteName: 'SecuFleet',
@@ -106,8 +111,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "SecuFleet",
-              "url": "https://secufleet.com",
-              "logo": "https://secufleet.com/assets/images/logo/LogoNew-nobg.png",
+              "url": baseUrl,
+              "logo": `${baseUrl}/assets/images/logo/LogoNew-nobg.png`,
               "description": "Professional fleet management solutions and consulting services",
               "address": {
                 "@type": "PostalAddress",

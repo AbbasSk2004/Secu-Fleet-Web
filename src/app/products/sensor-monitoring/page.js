@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import ScheduleSection from '@/components/products/sensor-monitoring/ScheduleSection';
@@ -8,6 +6,11 @@ import DataLoggingSection from '@/components/products/sensor-monitoring/DataLogg
 import ComplianceSection from '@/components/products/sensor-monitoring/ComplianceSection';
 import '@/assets/css/products.css';
 import '@/assets/css/animation.css';
+
+export const metadata = {
+	title: 'Sensor Monitoring - SecuFleet',
+	description: 'Monitor sensors across your fleet with integration, data logging, and compliance tools.',
+}
 
 export default function SensorMonitoringPage() {
   return (

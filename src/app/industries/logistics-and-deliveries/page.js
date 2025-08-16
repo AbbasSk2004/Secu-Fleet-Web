@@ -7,6 +7,10 @@ import DetailedService from '../../../components/industries/logistics-and-delive
 import Features from '../../../components/industries/logistics-and-deliveries/Features';
 import Technology from '../../../components/industries/logistics-and-deliveries/Technology';
 
+export const metadata = {
+	title: 'Logistics & Deliveries | SecuFleet Industries',
+	description: 'Fleet solutions for logistics and delivery services: route optimization, tracking, and real-time visibility.',
+}
 
 const LogisticsAndDeliveriesPage = () => {
   return (

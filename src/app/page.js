@@ -20,6 +20,11 @@ import '../assets/css/animation.css';
 import '../assets/css/style.css';
 import '../assets/css/home/quote-section.css';
 
+export const metadata = {
+	title: 'SecuFleet - Fleet Management Solutions',
+	description: 'Professional fleet management solutions: GPS tracking, route planning, driver behavior, asset tracking, and analytics.',
+}
+
 const Home = () => {
   return (
     <>
@@ -35,8 +40,9 @@ const Home = () => {
         <Services />
         <Testimonials />
         <Quote />
-        <FAQ />
         <Blogs />
+        <FAQ />
+        
       </Layout>
     </>
   );

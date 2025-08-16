@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import '../../assets/css/navbar.css';
 
 const Navbar = () => {
@@ -70,7 +71,7 @@ const Navbar = () => {
         <div className="navbar-desktop-container">
           <div className="navbar-desktop-left">
             <Link href="/" className="navbar-desktop-brand">
-              <img src="/assets/images/logo/LogoNew-nobg.png" alt="SecuFleet Logo" className="navbar-desktop-logo" />
+              <Image src="/assets/images/logo/LogoNew-nobg.png" alt="SecuFleet Logo" className="navbar-desktop-logo" width={180} height={48} priority />
             </Link>
           </div>
           
@@ -112,7 +113,7 @@ const Navbar = () => {
         <div className="navbar-center">
           <div className="navbar-brand">
             <Link href="/">
-              <img src="/assets/images/logo/LogoNew-nobg.png" alt="SecuFleet Logo" className="logo" />
+              <Image src="/assets/images/logo/LogoNew-nobg.png" alt="SecuFleet Logo" className="logo" width={160} height={44} priority />
             </Link>
           </div>
         </div>
@@ -130,7 +131,7 @@ const Navbar = () => {
       <div className={`mobile-sidebar ${menuOpen ? 'open' : ''}`} id="mobileSidebar">
         <div className="mobile-sidebar-header">
           <div className="mobile-sidebar-logo">
-            <img src="/assets/images/logo/LogoNew-nobg.png" alt="SecuFleet Logo" />
+            <Image src="/assets/images/logo/LogoNew-nobg.png" alt="SecuFleet Logo" width={140} height={40} />
           </div>
           <button className="mobile-sidebar-close" onClick={closeAll}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
