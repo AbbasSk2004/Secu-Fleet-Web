@@ -1,10 +1,22 @@
+'use client'
 import React from 'react';
 
 const WhoWeAre = () => {
   return (
     <section className="who-we-are-section">
       <div className="video-background">
-        <video autoPlay loop muted playsInline suppressHydrationWarning>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          suppressHydrationWarning
+          style={{ 
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        >
           <source src="/assets/videos/canva3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

@@ -13,8 +13,15 @@ const Quote = () => {
   return (
     <section className="secufleet-quote-section">
       <div className="secufleet-quote-video">
-        <video autoPlay loop muted suppressHydrationWarning>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          suppressHydrationWarning
+        >
           <source src="/assets/videos/acc.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
       </div>
       <div className="secufleet-quote-content">

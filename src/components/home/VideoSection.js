@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 const VideoSection = () => {
@@ -26,7 +27,6 @@ const VideoSection = () => {
         }}
       >
         <source src="/assets/videos/vd.mp4" type="video/mp4" />
-        {/* Fallback text */}
         Your browser does not support the video tag.
       </video>
     </section>
