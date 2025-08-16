@@ -45,6 +45,11 @@ const CoreServices = () => {
       <div className={styles.container}>
         <div className={styles.sectionTitleWrapper}>
           <h2 className={styles.sectionTitle}>Our Core Services</h2>
+          <div className={styles.lineContainer}>
+            <div className={styles.lineAnimation}>
+              <div className={styles.animatedDot}></div>
+            </div>
+          </div>
         </div>
         
         {/* First Row - 3 services */}

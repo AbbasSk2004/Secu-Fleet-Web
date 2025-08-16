@@ -63,6 +63,39 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.lineContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineAnimation {
+  width: 10%;
+  height: 7px;
+  background-color: #06A3DA;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.animatedDot {
+  width: 8%;
+  height: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  animation: slideBackAndForth 3s infinite ease-in-out;
+}
+
+@keyframes slideBackAndForth {
+  0% { left: -10%; }
+  50% { left: 100%; }
+  100% { left: -10%; }
+}
+
 .servicesWrapper {
   display: grid;
   align-items: baseline;

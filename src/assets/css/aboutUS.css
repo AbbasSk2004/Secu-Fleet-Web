@@ -5,41 +5,32 @@ body {
     background-color: #fff;
     color: #333;
 }
-.line-animation {
-    width: 8%; 
-    height: 100%;   
-    background-color: #091E3E;
-    position: absolute;
-    animation: slide 3s infinite ease-in-out;
-    }
-    .line-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        }
-        
-        .line-line {
-        width: 10%; 
-        height: 7px; 
-        background-color: #00a0e9; 
-        position: relative;
-        overflow: hidden;
-        border-radius: 5px; 
-        /* margin-left: 4%; */
-        }
+/* Line animations moved to dedicated file */
 /* Hero Section */
 .hero {
     background-color: #091E3E;
-    background-image: url("/assets/images/aboutUs/background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    position: relative;
 }
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
 .hero h1{
     font-size: 3rem;
     color:white
@@ -67,35 +58,7 @@ body {
     background-size: cover;
     /* background-position: center; */
 }
-/* Our Story Section */
-.our-story {
-    padding: 50px 0;
-    color: white;
-    text-align: right;
-    margin-right: 90px;
-    margin-bottom: 15px;
-}
-
-.our-story .container {
-    margin: 0 auto;
-    
-}
-
-.our-story h2 {
-    margin-right: 27%;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.our-story p {
-    text-align: justify;
-    display: inline-block;
-    /* width: auto; */
-    max-width: 510px;
-    
-}
-
+/* Our Story Section - Moved to dedicated file */
 /* Mission and Vision Section */
 .mission-vision {
     padding: 50px 0;
@@ -243,35 +206,7 @@ color: white;
         margin-top: 50px;
 
     }
-    /* .image-wrapper::before {
-        content: "";
-        position: absolute;
-        top: -20px;
-        left: 50px;
-        width: 70%;
-        height: 50%;
-        background-color: #091E3E;
-        z-index: 1;
-        transform: translate(-15px, -15px);
-        border-radius: 10px;
-        
-    } */
-    /* .main-image{
-     width: 200px;
-     height: 200px;
-     object-fit: contain;
-     z-index: 2;
-     margin-top: 50px;
-    } */
-    /* .secondary-image {
-        width: 150px !important;
-        height: 150px !important;
-        object-fit: cover;
-        z-index: 2;
-        position: relative;
-    } */
-
-
+   
    
 }
 
@@ -343,29 +278,7 @@ margin-top: 50px;
 }
 
 
-
-
-/* Values Section */
-.values {
-    color: rgb(0, 0, 0);
-    justify-content: flex-end;
-
-    margin-left: 20px;
-}
-
-.values h1 {
-    font-size: 2rem;
-}
-
-.values-container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 90px;
-}
-
-.values-container p {
-   max-width: 600px;
-}
+/* Values Section - Moved to dedicated file */
 
 /* Meet the Team Section */
 .team {
@@ -404,8 +317,4 @@ margin-top: 50px;
     background-color: #fff;
 }
 
-@media screen and (min-width:999px) {
-    .values {
-      margin-left:50%;
-    }
-}
+/* Values media query moved to dedicated file */

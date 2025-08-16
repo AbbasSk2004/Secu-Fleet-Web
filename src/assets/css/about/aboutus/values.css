@@ -1,0 +1,77 @@
+/* Values Section Styles */
+.values {
+    color: rgb(0, 0, 0);
+    justify-content: flex-end;
+    margin-left: 20px;
+    will-change: transform; /* Optimize for GPU acceleration */
+}
+
+.values h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.values-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+}
+
+.values-container p {
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.values-container ul {
+    padding-left: 20px;
+}
+
+.values-container li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.line-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+        
+.line-line {
+    height: 7px; 
+    background-color: #00a0e9; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px; 
+}
+
+.line-animation {
+    width: 8%; 
+    height: 100%;   
+    position: absolute;
+    animation: slideBackAndForth 3s infinite ease-in-out;
+}
+
+@keyframes slideBackAndForth {
+    0% { left: -10%; }
+    50% { left: 100%; }
+    100% { left: -10%; }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .values {
+        margin-left: 10px;
+    }
+    
+    .values-container {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 999px) {
+    .values {
+        margin-left: 50%;
+    }
+} 

@@ -3,9 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import '../../assets/css/style.css';
-import '../../assets/css/index.css';
-import '../../assets/css/animation.css';
 import '../../assets/css/footer.css';
 
 const Footer = () => {
